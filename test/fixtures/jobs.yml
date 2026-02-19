@@ -1,0 +1,33 @@
+published_rails_job:
+  title: Senior Rails Developer
+  location: San Francisco, CA
+  salary_min: 120000
+  salary_max: 180000
+  job_type: 0
+  status: 1
+  expires_at: <%= 30.days.from_now.to_date %>
+  applications_count: 0
+  user: employer_one
+  category: engineering
+
+published_design_job:
+  title: Product Designer
+  location: New York, NY
+  salary_min: 90000
+  salary_max: 140000
+  job_type: 3
+  status: 1
+  applications_count: 0
+  user: employer_two
+  category: design
+
+draft_job:
+  title: Marketing Manager
+  location: Chicago, IL
+  salary_min: 80000
+  salary_max: 110000
+  job_type: 0
+  status: 0
+  applications_count: 0
+  user: employer_one
+  category: marketing
