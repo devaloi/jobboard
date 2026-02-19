@@ -1,14 +1,13 @@
 <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sticky top-20">
   <h3 class="text-sm font-semibold text-gray-900 mb-4">Search & Filter</h3>
 
-  <%= form_with url: jobs_path, method: :get, class: "space-y-4", data: { controller: "search", turbo_frame: "job_listings" } do |f| %>
+  <%= search_form_for @q, url: jobs_path, html: { class: "space-y-4", data: { controller: "search", turbo_frame: "job_listings" } } do |f| %>
     <div>
-      <label for="q" class="block text-xs font-medium text-gray-600 mb-1">Search</label>
-      <input type="text" name="q" id="q" value="<%= params[:q] %>"
-             class="w-full rounded-md border-gray-300 text-sm px-3 py-2 border focus:border-indigo-500 focus:ring-indigo-500"
-             placeholder="Title, company, location..."
-             data-search-target="input"
-             data-action="input->search#search">
+      <label for="q_title_or_location_or_user_company_name_cont" class="block text-xs font-medium text-gray-600 mb-1">Search</label>
+      <%= f.search_field :title_or_location_or_user_company_name_cont,
+          class: "w-full rounded-md border-gray-300 text-sm px-3 py-2 border focus:border-indigo-500 focus:ring-indigo-500",
+          placeholder: "Title, company, location...",
+          data: { search_target: "input", action: "input->search#search" } %>
     </div>
 
     <div>

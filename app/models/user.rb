@@ -11,4 +11,12 @@ class User < ApplicationRecord
   validates :full_name, presence: true
   validates :company_name, presence: true, if: :employer?
   validates :role, presence: true
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[company_name full_name email]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    []
+  end
 end
