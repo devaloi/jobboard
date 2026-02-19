@@ -1,0 +1,91 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Job Seeker Dashboard</h1>
+
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Applications Sent</p>
+      <p class="text-3xl font-bold text-indigo-600 mt-1"><%= @applications_count %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Interviews</p>
+      <p class="text-3xl font-bold text-purple-600 mt-1"><%= @interviews_count %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Offers</p>
+      <p class="text-3xl font-bold text-green-600 mt-1"><%= @offers_count %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Saved Jobs</p>
+      <p class="text-3xl font-bold text-gray-900 mt-1"><%= @saved_count %></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Recent Applications -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">Recent Applications</h2>
+        <%= link_to "View All", seeker_applications_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+      </div>
+      <% if @recent_applications.any? %>
+        <div class="divide-y divide-gray-200">
+          <% @recent_applications.each do |app| %>
+            <div class="px-6 py-4">
+              <div class="flex justify-between items-center">
+                <%= link_to app.job.title, job_path(app.job), class: "text-sm font-medium text-gray-900 hover:text-indigo-600" %>
+                <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(app.status) %>">
+                  <%= app.status.humanize %>
+                </span>
+              </div>
+              <p class="text-xs text-gray-500 mt-1"><%= app.job.company_name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="px-6 py-8 text-center text-gray-500 text-sm">No applications yet.</div>
+      <% end %>
+    </div>
+
+    <!-- Saved Jobs -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">Saved Jobs</h2>
+        <%= link_to "View All", seeker_saved_index_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+      </div>
+      <% if @saved_jobs.any? %>
+        <div class="divide-y divide-gray-200">
+          <% @saved_jobs.each do |saved| %>
+            <div class="px-6 py-4">
+              <%= link_to saved.job.title, job_path(saved.job), class: "text-sm font-medium text-gray-900 hover:text-indigo-600" %>
+              <p class="text-xs text-gray-500 mt-1"><%= saved.job.company_name %> · <%= saved.job.location %></p>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="px-6 py-8 text-center text-gray-500 text-sm">No saved jobs.</div>
+      <% end %>
+    </div>
+
+    <!-- Suggested Jobs -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900">Suggested Jobs</h2>
+      </div>
+      <% if @suggested_jobs.any? %>
+        <div class="divide-y divide-gray-200">
+          <% @suggested_jobs.each do |job| %>
+            <div class="px-6 py-4">
+              <%= link_to job.title, job_path(job), class: "text-sm font-medium text-gray-900 hover:text-indigo-600" %>
+              <p class="text-xs text-gray-500 mt-1"><%= job.company_name %> · <%= job.category.name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="px-6 py-8 text-center text-gray-500 text-sm">
+          <%= link_to "Browse all jobs", jobs_path, class: "text-indigo-600 hover:text-indigo-800" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
