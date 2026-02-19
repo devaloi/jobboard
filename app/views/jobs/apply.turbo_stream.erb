@@ -1,0 +1,29 @@
+<turbo-stream action="replace" target="job_actions">
+  <template>
+    <turbo-frame id="job_actions">
+      <div class="flex items-center space-x-4 border-t border-gray-200 pt-6">
+        <span class="inline-flex items-center px-6 py-3 bg-green-100 text-green-800 text-sm font-medium rounded-md">
+          ✓ Applied
+        </span>
+
+        <turbo-frame id="save_job_action">
+          <% if current_user.saved_jobs.exists?(job: @job) %>
+            <%= button_to "♥ Saved", unsave_job_job_path(@job), method: :delete, class: "px-4 py-3 bg-red-100 text-red-700 text-sm font-medium rounded-md hover:bg-red-200" %>
+          <% else %>
+            <%= button_to "♡ Save", save_job_job_path(@job), method: :post, class: "px-4 py-3 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200" %>
+          <% end %>
+        </turbo-frame>
+      </div>
+    </turbo-frame>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="prepend" target="flash_messages">
+  <template>
+    <div data-controller="flash" data-flash-target="container" class="max-w-7xl mx-auto px-4 mt-4">
+      <div class="rounded-md p-4 bg-green-50 text-green-800 border border-green-200" role="alert">
+        <p class="text-sm font-medium">Application submitted successfully!</p>
+      </div>
+    </div>
+  </template>
+</turbo-stream>

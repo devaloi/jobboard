@@ -1,0 +1,7 @@
+<turbo-stream action="replace" target="save_job_action">
+  <template>
+    <turbo-frame id="save_job_action">
+      <%= button_to "♥ Saved", unsave_job_job_path(@job), method: :delete, class: "px-4 py-3 bg-red-100 text-red-700 text-sm font-medium rounded-md hover:bg-red-200" %>
+    </turbo-frame>
+  </template>
+</turbo-stream>
