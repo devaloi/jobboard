@@ -1,0 +1,46 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-900">All Job Listings</h1>
+    <%= link_to "← Dashboard", admin_dashboard_path, class: "text-indigo-600 hover:text-indigo-800 text-sm" %>
+  </div>
+
+  <div class="bg-white shadow rounded-lg overflow-hidden">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Employer</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Apps</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <% @jobs.each do |job| %>
+          <tr>
+            <td class="px-6 py-4">
+              <%= link_to job.title, job_path(job), class: "text-sm font-medium text-indigo-600 hover:text-indigo-900" %>
+              <div class="text-xs text-gray-500"><%= job.location %></div>
+            </td>
+            <td class="px-6 py-4 text-sm text-gray-500"><%= job.user.company_name %></td>
+            <td class="px-6 py-4 text-sm text-gray-500"><%= job.category.name %></td>
+            <td class="px-6 py-4">
+              <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(job.status) %>">
+                <%= job.status.humanize %>
+              </span>
+            </td>
+            <td class="px-6 py-4 text-sm text-gray-500"><%= job.applications_count %></td>
+            <td class="px-6 py-4">
+              <%= button_to "Remove", admin_job_path(job), method: :delete, class: "text-red-600 hover:text-red-900 text-sm", data: { turbo_confirm: "Remove this listing permanently?" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-6">
+    <%= pagy_nav_tag(@pagy) %>
+  </div>
+</div>
