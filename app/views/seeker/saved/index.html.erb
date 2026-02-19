@@ -1,0 +1,36 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Saved Jobs</h1>
+
+  <% if @saved_jobs.any? %>
+    <div class="grid gap-4">
+      <% @saved_jobs.each do |saved_job| %>
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 flex justify-between items-center">
+          <div>
+            <div class="flex items-center space-x-2 mb-1">
+              <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= job_type_badge_class(saved_job.job.job_type) %>">
+                <%= saved_job.job.job_type.humanize %>
+              </span>
+              <span class="text-xs text-gray-500"><%= saved_job.job.category.name %></span>
+            </div>
+            <%= link_to saved_job.job.title, job_path(saved_job.job), class: "text-lg font-semibold text-gray-900 hover:text-indigo-600" %>
+            <div class="mt-1 text-sm text-gray-500">
+              <%= saved_job.job.company_name %> · <%= saved_job.job.location %>
+              <% if saved_job.job.salary_min.present? %>
+                · <%= format_salary(saved_job.job.salary_min, saved_job.job.salary_max) %>
+              <% end %>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <%= link_to "View", job_path(saved_job.job), class: "px-3 py-2 bg-indigo-600 text-white text-sm rounded-md hover:bg-indigo-700" %>
+            <%= button_to "Remove", unsave_job_job_path(saved_job.job), method: :delete, class: "px-3 py-2 bg-red-100 text-red-700 text-sm rounded-md hover:bg-red-200" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="text-center py-12 bg-white rounded-lg shadow">
+      <p class="text-gray-500 mb-4">You haven't saved any jobs yet.</p>
+      <%= link_to "Browse Jobs", jobs_path, class: "text-indigo-600 hover:text-indigo-800" %>
+    </div>
+  <% end %>
+</div>
