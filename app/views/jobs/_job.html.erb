@@ -1,0 +1,33 @@
+<turbo-frame id="<%= dom_id(job) %>">
+  <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+    <div class="flex justify-between items-start">
+      <div class="flex-1">
+        <div class="flex items-center space-x-2 mb-1">
+          <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= job_type_badge_class(job.job_type) %>">
+            <%= job.job_type.humanize %>
+          </span>
+          <span class="text-xs text-gray-500"><%= job.category.name %></span>
+        </div>
+
+        <%= link_to job_path(job), class: "block" do %>
+          <h2 class="text-lg font-semibold text-gray-900 hover:text-indigo-600 transition"><%= job.title %></h2>
+        <% end %>
+
+        <div class="mt-1 flex items-center space-x-4 text-sm text-gray-500">
+          <span><%= job.company_name %></span>
+          <span>📍 <%= job.location %></span>
+          <% if job.salary_min.present? || job.salary_max.present? %>
+            <span>💰 <%= format_salary(job.salary_min, job.salary_max) %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="text-right text-xs text-gray-400 flex-shrink-0 ml-4">
+        <p><%= time_ago_in_words(job.created_at) %> ago</p>
+        <% if job.expires_at.present? %>
+          <p class="mt-1 text-orange-500">Expires <%= job.expires_at.strftime("%b %d") %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</turbo-frame>
