@@ -1,0 +1,26 @@
+<tr id="<%= dom_id(application) %>">
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="text-sm font-medium text-gray-900"><%= application.user.full_name %></div>
+    <div class="text-sm text-gray-500"><%= application.user.email %></div>
+  </td>
+  <td class="px-6 py-4">
+    <div class="text-sm text-gray-700 max-w-xs truncate"><%= application.cover_letter.presence || "No cover letter" %></div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <turbo-frame id="<%= dom_id(application, :status) %>">
+      <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(application.status) %>">
+        <%= application.status.humanize %>
+      </span>
+    </turbo-frame>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    <%= time_ago_in_words(application.created_at) %> ago
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <%= form_with url: status_employer_application_path(application), method: :patch, data: { turbo_frame: dom_id(application, :status) } do |f| %>
+      <%= f.select :status, JobApplication.statuses.keys.map { |s| [s.humanize, s] }, { selected: application.status },
+          class: "text-sm border-gray-300 rounded-md px-2 py-1 border",
+          onchange: "this.form.requestSubmit()" %>
+    <% end %>
+  </td>
+</tr>
