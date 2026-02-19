@@ -11,6 +11,7 @@ module Employer
       @application = JobApplication.joins(:job).where(jobs: { user_id: current_user.id }).find(params[:id])
 
       if @application.update(status: params[:status])
+        JobApplicationMailer.status_changed(@application).deliver_later
         respond_to do |format|
           format.turbo_stream
           format.html { redirect_to employer_job_applications_path(@application.job), notice: "Application status updated." }
