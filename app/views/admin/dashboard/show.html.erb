@@ -1,0 +1,63 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Admin Dashboard</h1>
+
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Total Users</p>
+      <p class="text-3xl font-bold text-gray-900 mt-1"><%= @total_users %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Total Jobs</p>
+      <p class="text-3xl font-bold text-indigo-600 mt-1"><%= @total_jobs %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Total Applications</p>
+      <p class="text-3xl font-bold text-green-600 mt-1"><%= @total_applications %></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Recent Jobs -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">Recent Jobs</h2>
+        <%= link_to "View All", admin_jobs_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+      </div>
+      <div class="divide-y divide-gray-200">
+        <% @recent_jobs.each do |job| %>
+          <div class="px-6 py-4 flex justify-between items-center">
+            <div>
+              <p class="text-sm font-medium text-gray-900"><%= job.title %></p>
+              <p class="text-xs text-gray-500"><%= job.user.company_name %> · <%= job.category.name %></p>
+            </div>
+            <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(job.status) %>">
+              <%= job.status.humanize %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Recent Users -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">Recent Users</h2>
+        <%= link_to "View All", admin_users_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+      </div>
+      <div class="divide-y divide-gray-200">
+        <% @recent_users.each do |user| %>
+          <div class="px-6 py-4 flex justify-between items-center">
+            <div>
+              <p class="text-sm font-medium text-gray-900"><%= user.full_name %></p>
+              <p class="text-xs text-gray-500"><%= user.email %></p>
+            </div>
+            <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= role_badge_class(user.role) %>">
+              <%= user.role.humanize %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
