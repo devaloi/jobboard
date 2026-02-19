@@ -1,4 +1,6 @@
 class JobApplication < ApplicationRecord
+  include ActionView::RecordIdentifier
+
   belongs_to :job, counter_cache: :applications_count
   belongs_to :user
 

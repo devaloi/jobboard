@@ -1,3 +1,6 @@
 # frozen_string_literal: true
 
-# Pagy 43+ uses frozen defaults; configure via Pagy options in controllers
+require "pagy/extras/overflow"
+
+Pagy::DEFAULT[:limit] = 12
+Pagy::DEFAULT[:overflow] = :last_page
