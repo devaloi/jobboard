@@ -1,0 +1,13 @@
+applied_application:
+  job: published_rails_job
+  user: seeker_one
+  cover_letter: I would love to work on this Rails project.
+  status: 0
+  status_changed_at: <%= Time.current %>
+
+reviewed_application:
+  job: published_design_job
+  user: seeker_two
+  cover_letter: I have extensive design experience.
+  status: 1
+  status_changed_at: <%= Time.current %>
