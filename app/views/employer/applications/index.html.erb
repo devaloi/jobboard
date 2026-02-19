@@ -1,3 +1,5 @@
+<%= turbo_stream_from "employer_#{current_user.id}_applications" %>
+
 <div class="max-w-7xl mx-auto px-4 py-8">
   <div class="mb-6">
     <%= link_to "← Back to My Listings", employer_jobs_path, class: "text-indigo-600 hover:text-indigo-800 text-sm" %>
