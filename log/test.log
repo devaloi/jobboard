@@ -11953,3 +11953,1278 @@ Processing by Seeker::DashboardController#show as HTML
 Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.5ms (16 queries, 0 cached) | GC: 0.2ms)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (13.3ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (16.0ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[36mTruncate Tables (17.0ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[36mTruncate Tables (16.6ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (17.5ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (16.9ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (17.7ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (19.3ms)[0m  [1m[31mDELETE FROM "saved_jobs";
+DELETE FROM "active_storage_variant_records";
+DELETE FROM "active_storage_attachments";
+DELETE FROM "users";
+DELETE FROM "categories";
+DELETE FROM "jobs";
+DELETE FROM "action_text_rich_texts";
+DELETE FROM "job_applications";
+DELETE FROM "active_storage_blobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.810557', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.810557'), (223304243, '2026-02-19 09:05:57.810557', 0, 'Design', 'design', '2026-02-19 09:05:57.810557'), (344023402, '2026-02-19 09:05:57.810557', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.810557'), (729903173, '2026-02-19 09:05:57.810557', 0, 'Sales', 'sales', '2026-02-19 09:05:57.810557'), (323617968, '2026-02-19 09:05:57.810557', 0, 'Product', 'product', '2026-02-19 09:05:57.810557');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.812525', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.812525', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.812525', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.812525', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.813928', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.813928', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.813928', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.813928', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.813928', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.813928', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.814393', 200141451, '2026-02-19 09:05:57.814393', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.814788', 'admin@example.com', '$2a$04$3IQAHTQ56eQCEKyZUOMPzOh8QLFtPLL9OhTs9za4vzuU3SMlvLjuG', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.814788'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.814788', 'employer1@example.com', '$2a$04$NBor2vPnCGiH2qQ1SuTQoOLam90LvMvIumUJgKjskgjRiIDwz.LrC', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.814788'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.814788', 'employer2@example.com', '$2a$04$IcaTu6rPM0anDlRBUGIj6OPDZQlCi96VaCumVRjWj93sCjitTV06W', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.814788'), (886196631, NULL, NULL, '2026-02-19 09:05:57.814788', 'seeker1@example.com', '$2a$04$R0ATwUVgD886JwW5Pyg2KO6omgl6i3nu3d476RTu1mnrWD3k9AJYi', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.814788'), (527713537, NULL, NULL, '2026-02-19 09:05:57.814788', 'seeker2@example.com', '$2a$04$kSvve0Nkrlwj7lwMYJ77w.6SgLW5D0Yh06nBpxTiBwV.62L5xucsy', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.814788')[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.810784', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.810784'), (223304243, '2026-02-19 09:05:57.810784', 0, 'Design', 'design', '2026-02-19 09:05:57.810784'), (344023402, '2026-02-19 09:05:57.810784', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.810784'), (729903173, '2026-02-19 09:05:57.810784', 0, 'Sales', 'sales', '2026-02-19 09:05:57.810784'), (323617968, '2026-02-19 09:05:57.810784', 0, 'Product', 'product', '2026-02-19 09:05:57.810784');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.812525', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.812525', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.812525', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.812525', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.813936', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.813936', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.813936', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.813936', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.813936', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.813936', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.814417', 200141451, '2026-02-19 09:05:57.814417', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.814808', 'admin@example.com', '$2a$04$TzfTIGf0UZacpYb4wF.og./6HyN0Ao37s4jvpVMAcr7shAkH0osCW', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.814808'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.814808', 'employer1@example.com', '$2a$04$9k1SJNU2BwwD6BojSGsURO4Rt7BfqwrzuZNIpddMew8rXHpzZ6YL.', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.814808'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.814808', 'employer2@example.com', '$2a$04$Iv6G4kmHT/F5aktPx4sQxOkf3xpaNOnj0Kbptq7I.ZyotEcEs/6e6', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.814808'), (886196631, NULL, NULL, '2026-02-19 09:05:57.814808', 'seeker1@example.com', '$2a$04$27jzMykoJgbs4xGp6ub3DeHXdzW9aZnVKUXzs6uZ929lTmtnB8gB6', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.814808'), (527713537, NULL, NULL, '2026-02-19 09:05:57.814808', 'seeker2@example.com', '$2a$04$nmmroEx03ibaectX0BJM0esDB/qpZv6g23Ew/031dEM3YN3nRTOWW', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.814808')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+----------------------------------------------------
+JobApplicationTest: test_uniqueness_per_user_per_job
+----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------
+JobApplicationTest: test_tracks_status_changed_at_on_status_change
+------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.813553', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.813553'), (223304243, '2026-02-19 09:05:57.813553', 0, 'Design', 'design', '2026-02-19 09:05:57.813553'), (344023402, '2026-02-19 09:05:57.813553', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.813553'), (729903173, '2026-02-19 09:05:57.813553', 0, 'Sales', 'sales', '2026-02-19 09:05:57.813553'), (323617968, '2026-02-19 09:05:57.813553', 0, 'Product', 'product', '2026-02-19 09:05:57.813553');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.815234', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.815234', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.815234', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.815234', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.818874', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.818874', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.818874', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.818874', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.818874', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.818874', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.819355', 200141451, '2026-02-19 09:05:57.819355', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.819769', 'admin@example.com', '$2a$04$b0s3GvLLVJtuXezbMt8RZ.FD6HSlCcVCAjWg726RlxNcMfzuNz1F6', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.819769'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.819769', 'employer1@example.com', '$2a$04$vlI6EOr3PqnsdCwAa34h2uk6qVmMw2VvNq4tuTJ68kR/Kei1Y.6.a', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.819769'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.819769', 'employer2@example.com', '$2a$04$p4C.MOUTkYxs6paCkvwQLeck7slcD2ivYAXxhrWnbwFtvhbpPH.bi', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.819769'), (886196631, NULL, NULL, '2026-02-19 09:05:57.819769', 'seeker1@example.com', '$2a$04$cs1yoho6pxZv26wIdIBN6.LFuzKEGeHv7EOk104CRPTcNdNSKnJTi', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.819769'), (527713537, NULL, NULL, '2026-02-19 09:05:57.819769', 'seeker2@example.com', '$2a$04$8GhEZHzES9IW9l6e1PGJxO/mBRdxLpaNOQPmTyGwcff3/8xZ6LlW.', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.819769')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+JobApplicationTest: test_valid_application
+------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.815246', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.815246'), (223304243, '2026-02-19 09:05:57.815246', 0, 'Design', 'design', '2026-02-19 09:05:57.815246'), (344023402, '2026-02-19 09:05:57.815246', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.815246'), (729903173, '2026-02-19 09:05:57.815246', 0, 'Sales', 'sales', '2026-02-19 09:05:57.815246'), (323617968, '2026-02-19 09:05:57.815246', 0, 'Product', 'product', '2026-02-19 09:05:57.815246');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.820707', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.820707', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.820707', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.820707', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.822150', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.822150', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.822150', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.822150', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.822150', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.822150', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.823236', 200141451, '2026-02-19 09:05:57.823236', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.824576', 'admin@example.com', '$2a$04$Hsl4Tg4agd.4bJe9Nd75gOFcpGC.uQKWWNL/onRpe6Dg9jxO4XDmC', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.824576'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.824576', 'employer1@example.com', '$2a$04$hFZogud8lyQ27SFJXq77ieJg6lhqTrzEM29IM7BWQ5dgjo5UIRG9i', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.824576'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.824576', 'employer2@example.com', '$2a$04$TuhjZws.hsgge6jj4Ix4.uic/LuGWxVLB0WbKxDT4td1k20F50w/W', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.824576'), (886196631, NULL, NULL, '2026-02-19 09:05:57.824576', 'seeker1@example.com', '$2a$04$N.DEoJkWv7pbIN0tZ76lxeF8y5nTwqcTAgfjeHr3a1mWQTIvGqqT6', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.824576'), (527713537, NULL, NULL, '2026-02-19 09:05:57.824576', 'seeker2@example.com', '$2a$04$JBPAex/p.m.8tJo9yGPtg.HUWTx7ELtO6TFr/1bKNkhqjJJqzBIYa', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.824576')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------
+JobApplicationTest: test_by_status_scope
+----------------------------------------
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 647134511], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.814954', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.814954'), (223304243, '2026-02-19 09:05:57.814954', 0, 'Design', 'design', '2026-02-19 09:05:57.814954'), (344023402, '2026-02-19 09:05:57.814954', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.814954'), (729903173, '2026-02-19 09:05:57.814954', 0, 'Sales', 'sales', '2026-02-19 09:05:57.814954'), (323617968, '2026-02-19 09:05:57.814954', 0, 'Product', 'product', '2026-02-19 09:05:57.814954');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.824986', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.824986', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.824986', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.824986', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.827356', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.827356', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.827356', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.827356', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.827356', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.827356', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.827856', 200141451, '2026-02-19 09:05:57.827856', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.828268', 'admin@example.com', '$2a$04$OL1UKqvF3l5OBFVOeJ7YguPujcbcRdqtpzBc6zMpt7PdCsbmemFzu', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.828268'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.828268', 'employer1@example.com', '$2a$04$nk.00tWpjxDD.bgaqmka2OWOfgMwPD3KKJKgW3wnPF9fY7DNzmSkC', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.828268'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.828268', 'employer2@example.com', '$2a$04$eAO.cjex5pJ0HRjgsE0M0.JIX4RxPCT5Cm7uZijdh4L28VMwf.Wlq', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.828268'), (886196631, NULL, NULL, '2026-02-19 09:05:57.828268', 'seeker1@example.com', '$2a$04$cOYgrcLxK.hWZDY9DtBQr.0OXFhK7cV2p4.RIgpB5Tx3JGbZnQKqm', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.828268'), (527713537, NULL, NULL, '2026-02-19 09:05:57.828268', 'seeker2@example.com', '$2a$04$iZiaHhP7IlXWdfs4DwPMEOuDGetunkcf3oPciuP9UgkT/nIUaxpSK', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.828268')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 200141451], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mJobApplication Load (0.3ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 647134511], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+JobApplicationTest: test_recent_scope_orders_by_created_at_desc
+---------------------------------------------------------------
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."status" = ?[0m  [["status", 0]]
+  [1m[36mJobApplication Load (0.5ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" ORDER BY "job_applications"."created_at" DESC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobApplication Update (0.1ms)[0m  [1m[33mUPDATE "job_applications" SET "status" = ?, "status_changed_at" = ?, "updated_at" = ? WHERE "job_applications"."id" = ?[0m  [["status", 1], ["status_changed_at", "2026-02-19 09:05:57.852438"], ["updated_at", "2026-02-19 09:05:57.852533"], ["id", 647134511]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.827999', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.827999'), (223304243, '2026-02-19 09:05:57.827999', 0, 'Design', 'design', '2026-02-19 09:05:57.827999'), (344023402, '2026-02-19 09:05:57.827999', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.827999'), (729903173, '2026-02-19 09:05:57.827999', 0, 'Sales', 'sales', '2026-02-19 09:05:57.827999'), (323617968, '2026-02-19 09:05:57.827999', 0, 'Product', 'product', '2026-02-19 09:05:57.827999');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.835117', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.835117', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.835117', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.835117', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.839041', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.839041', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.839041', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.839041', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.839041', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.839041', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.842433', 200141451, '2026-02-19 09:05:57.842433', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.845512', 'admin@example.com', '$2a$04$g8VxbfAQ.E.q.Uz3oTaGj.yXC6KCvXvblYbTnWIB0t2QYwCGkSd/a', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.845512'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.845512', 'employer1@example.com', '$2a$04$ib2MMwS7qoxBd2d33JNTserM83JiYxx79qnxz8cNlWMW/ulx8EcNG', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.845512'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.845512', 'employer2@example.com', '$2a$04$a8gcUAOTEfaoEfM6XMW68uChYKaKEfG0SvXUSLujSIzCkurItVjsm', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.845512'), (886196631, NULL, NULL, '2026-02-19 09:05:57.845512', 'seeker1@example.com', '$2a$04$n7v9HPxwWbI8rfWgMXuRrODMhBH61dFYdd6rTv7mJze5yr8Qq40di', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.845512'), (527713537, NULL, NULL, '2026-02-19 09:05:57.845512', 'seeker2@example.com', '$2a$04$k.SdKej10w/zOQoCWAXnWumftC9sEYm/WYXJJnM5PgLCtRhdxca52', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.845512')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------
+JobApplicationMailerTest: test_status_changed_sends_email_with_correct_details
+------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------
+JobApplicationTest: test_status_enum_values
+-------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+CategoryTest: test_ordered_scope
+--------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------
+CategoryTest: test_valid_category
+---------------------------------
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.851114', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.851114'), (223304243, '2026-02-19 09:05:57.851114', 0, 'Design', 'design', '2026-02-19 09:05:57.851114'), (344023402, '2026-02-19 09:05:57.851114', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.851114'), (729903173, '2026-02-19 09:05:57.851114', 0, 'Sales', 'sales', '2026-02-19 09:05:57.851114'), (323617968, '2026-02-19 09:05:57.851114', 0, 'Product', 'product', '2026-02-19 09:05:57.851114');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.858299', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.858299', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.858299', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.858299', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.864842', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.864842', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.864842', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.864842', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.864842', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.864842', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.865852', 200141451, '2026-02-19 09:05:57.865852', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.870147', 'admin@example.com', '$2a$04$RIsVWcsTk.VYjsvkHrO4IuhhHzKPTt.LX.gzZWJuRNrwWxKtRIh6S', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.870147'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.870147', 'employer1@example.com', '$2a$04$lDco3lVC6Nr9fufmnbklD.z0/cG6nczPwSz8WM62bCL3hw3/XmIDC', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.870147'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.870147', 'employer2@example.com', '$2a$04$C2LWghwTR1FUJM8Ai1SE2.pfHFByhOowzGbxf5n6YL0IyASzZkAWK', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.870147'), (886196631, NULL, NULL, '2026-02-19 09:05:57.870147', 'seeker1@example.com', '$2a$04$Rz8gW63Cqqe9aIffeByy1O9jbuSpwtVDK7.99.vuwG9e.S2i7gMKq', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.870147'), (527713537, NULL, NULL, '2026-02-19 09:05:57.870147', 'seeker2@example.com', '$2a$04$b7de4XL4ZZnoW1.aUSan7uLiSMs2IRQ.wdMQHc4IGaLhajkggzdqq', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.870147')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "categories";
+DELETE FROM "job_applications";
+DELETE FROM "jobs";
+DELETE FROM "saved_jobs";
+DELETE FROM "users";
+INSERT INTO "categories" ("id", "created_at", "jobs_count", "name", "slug", "updated_at") VALUES (242652078, '2026-02-19 09:05:57.853691', 0, 'Engineering', 'engineering', '2026-02-19 09:05:57.853691'), (223304243, '2026-02-19 09:05:57.853691', 0, 'Design', 'design', '2026-02-19 09:05:57.853691'), (344023402, '2026-02-19 09:05:57.853691', 0, 'Marketing', 'marketing', '2026-02-19 09:05:57.853691'), (729903173, '2026-02-19 09:05:57.853691', 0, 'Sales', 'sales', '2026-02-19 09:05:57.853691'), (323617968, '2026-02-19 09:05:57.853691', 0, 'Product', 'product', '2026-02-19 09:05:57.853691');
+INSERT INTO "job_applications" ("id", "cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (647134511, 'I would love to work on this Rails project.', '2026-02-19 09:05:57.860140', 305584985, 0, '2026-02-19 09:05:57', '2026-02-19 09:05:57.860140', 886196631), (333064026, 'I have extensive design experience.', '2026-02-19 09:05:57.860140', 200141451, 1, '2026-02-19 09:05:57', '2026-02-19 09:05:57.860140', 527713537);
+INSERT INTO "jobs" ("id", "applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (305584985, 0, 242652078, '2026-02-19 09:05:57.864772', '2026-03-21', 0, 'San Francisco, CA', 180000, 120000, 1, 'Senior Rails Developer', '2026-02-19 09:05:57.864772', 556383200), (200141451, 0, 223304243, '2026-02-19 09:05:57.864772', NULL, 3, 'New York, NY', 140000, 90000, 1, 'Product Designer', '2026-02-19 09:05:57.864772', 177190732), (557488621, 0, 344023402, '2026-02-19 09:05:57.864772', NULL, 0, 'Chicago, IL', 110000, 80000, 0, 'Marketing Manager', '2026-02-19 09:05:57.864772', 556383200);
+INSERT INTO "saved_jobs" ("id", "created_at", "job_id", "updated_at", "user_id") VALUES (895143111, '2026-02-19 09:05:57.866791', 200141451, '2026-02-19 09:05:57.866791', 886196631);
+INSERT INTO "users" ("id", "bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (135138680, NULL, NULL, '2026-02-19 09:05:57.869798', 'admin@example.com', '$2a$04$yWNqCqOkLMS3p0PV2io.xeU4FzoFVzBoPRHJO6mVE0z3z.KPh.R..', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:05:57.869798'), (556383200, NULL, 'TechCorp Inc', '2026-02-19 09:05:57.869798', 'employer1@example.com', '$2a$04$Qyw0Wxk8eD6bnFLg8noDruknAn/1faDRoSU5JokHEV9GkAL2l1Ht2', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.869798'), (177190732, NULL, 'StartupXYZ', '2026-02-19 09:05:57.869798', 'employer2@example.com', '$2a$04$hJk6FZoBlxX.AkLp.sQE.e.IIfkiuplY76J1MAIMQ2KPKWNoZK7MC', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:05:57.869798'), (886196631, NULL, NULL, '2026-02-19 09:05:57.869798', 'seeker1@example.com', '$2a$04$PxxbQwGYq/dbRuIdSccCCugLRDXzso7q..bgRTzhxhd0luFqf7xRy', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.869798'), (527713537, NULL, NULL, '2026-02-19 09:05:57.869798', 'seeker2@example.com', '$2a$04$t7VOGaTs9PMYtibj8ypTB.iHoC9Cz5hieDhIAqWjEPITtx7tODU7C', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:05:57.869798')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+Admin::UsersControllerTest: test_index_shows_all_users
+------------------------------------------------------
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------
+Admin::UsersControllerTest: test_non-admin_cannot_access
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Data Science"], ["LIMIT", 1]]
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "data-science"], ["LIMIT", 1]]
+-------------------------------------------
+CategoryTest: test_generates_slug_from_name
+-------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------
+CategoryTest: test_slug_uniqueness
+----------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Unique Cat"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "unique-cat"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Machine Learning"], ["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "machine-learning"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-19 09:05:57.886976"], ["jobs_count", 0], ["name", "Unique Cat"], ["slug", "unique-cat"], ["updated_at", "2026-02-19 09:05:57.886976"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."job_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["job_id", 200141451], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Unique Cat"], ["LIMIT", 1]]
+--------------------------------
+CategoryTest: test_requires_name
+--------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = ? LIMIT ?[0m  [["slug", "unique-cat"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mJobApplication Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."job_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["job_id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+Employer::ApplicationsControllerTest: test_index_shows_applications_for_employer's_job
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+Employer::ApplicationsControllerTest: test_seeker_cannot_access_employer_applications
+-------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+Employer::JobsControllerTest: test_create_with_valid_params
+-----------------------------------------------------------
+  [1m[36mJobApplication Load (1.7ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 333064026], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+Employer::ApplicationsControllerTest: test_status_update_changes_application_status
+-----------------------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  Rendered shared/_status_badge.html.erb (Duration: 2.2ms | GC: 0.8ms)
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 200141451], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+[ActionCable] Broadcasting to seeker_886196631_applications: "<turbo-stream action=\"replace\" target=\"status_job_application_647134511\"><template><turbo-frame id=\"status_job_application_647134511\">\n  <span class=\"inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800\">\n    Reviewed\n  </span>\n</turbo...
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Started POST "/employer/jobs" for 127.0.0.1 at 2026-02-19 03:05:57 -0600
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Started GET "/employer/jobs/305584985/applications" for 127.0.0.1 at 2026-02-19 03:05:57 -0600
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 527713537], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------
+Employer::JobsControllerTest: test_index_shows_employer's_jobs
+--------------------------------------------------------------
+Processing by Employer::ApplicationsController#index as HTML
+  Parameters: {"job_id" => "305584985"}
+Started GET "/employer/jobs/305584985/applications" for 127.0.0.1 at 2026-02-19 03:05:57 -0600
+Started GET "/admin/users" for 127.0.0.1 at 2026-02-19 03:05:57 -0600
+Redirected to http://www.example.com/
+Filter chain halted as :require_employer! rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+Processing by Employer::ApplicationsController#index as HTML
+  Parameters: {"job_id" => "305584985"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+Employer::JobsControllerTest: test_update_with_valid_params
+-----------------------------------------------------------
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Started PATCH "/employer/jobs/305584985" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Started GET "/admin/users" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Started GET "/employer/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["user_id", 556383200], ["id", 305584985], ["LIMIT", 1]]
+Processing by Employer::JobsController#create as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  Parameters: {"job" => {"title" => "New Job", "location" => "NYC", "salary_min" => "50000", "salary_max" => "100000", "job_type" => "full_time", "status" => "draft", "category_id" => "242652078"}}
+Processing by Admin::UsersController#index as HTML
+Processing by Employer::JobsController#index as HTML
+Processing by Employer::JobsController#update as HTML
+  Parameters: {"job" => {"title" => "Updated Title"}, "id" => "305584985"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering job_application_mailer/status_changed.html.erb within layouts/mailer
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 177190732], ["LIMIT", 1]]
+  Rendered job_application_mailer/status_changed.html.erb within layouts/mailer (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendering layout layouts/mailer.text.erb
+  Rendering job_application_mailer/status_changed.text.erb within layouts/mailer
+  Rendered job_application_mailer/status_changed.text.erb within layouts/mailer (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.3ms | GC: 0.0ms)
+Redirected to http://www.example.com/
+Filter chain halted as :require_admin! rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+JobApplicationMailer#status_changed: processed outbound mail in 50.8ms
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 647134511], ["LIMIT", 1]]
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["user_id", 556383200], ["id", 305584985], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employer/applications/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Started PATCH "/employer/applications/647134511/status" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobApplication Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" WHERE "job_applications"."job_id" = ?[0m  [["job_id", 305584985]]
+  [1m[36mJob Update (0.4ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "Updated Title"], ["updated_at", "2026-02-19 09:05:58.021959"], ["id", 305584985]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/employer/jobs
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJobApplication Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."job_id" = ? LIMIT ?[0m  [["job_id", 305584985], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."job_id" = ? ORDER BY "job_applications"."created_at" DESC[0m  [["job_id", 305584985]]
+  Rendering employer/jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "jobs" WHERE "jobs"."user_id" = ? LIMIT ?[0m  [["user_id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? ORDER BY "jobs"."created_at" DESC[0m  [["user_id", 556383200]]
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+Processing by Admin::UsersController#index as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["applications_count", 0], ["category_id", 242652078], ["created_at", "2026-02-19 09:05:58.027806"], ["expires_at", nil], ["job_type", 0], ["location", "NYC"], ["salary_max", 100000], ["salary_min", 50000], ["status", 0], ["title", "New Job"], ["updated_at", "2026-02-19 09:05:58.027806"], ["user_id", 556383200]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 886196631]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------
+Employer::JobsControllerTest: test_seeker_cannot_access_employer_jobs
+---------------------------------------------------------------------
+  [1m[36mCategory Update All (0.1ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + ? WHERE "categories"."id" = ?[0m  [["jobs_count", 1], ["id", 242652078]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+Started GET "/employer/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Redirected to http://www.example.com/employer/jobs
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms (3 queries, 1 cached) | GC: 0.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 242652078], ["id", 344023402]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------
+Employer::JobsControllerTest: test_employer_cannot_access_other_employer's_job_for_editing
+------------------------------------------------------------------------------------------
+Processing by Employer::JobsController#index as HTML
+Redirected to http://www.example.com/
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Filter chain halted as :require_employer! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  Rendered employer/jobs/index.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 177190732], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendered employer/applications/index.html.erb within layouts/application (Duration: 12.2ms | GC: 0.0ms)
+---------------------------------------------------
+Employer::JobsControllerTest: test_new_renders_form
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------
+Employer::JobsControllerTest: test_create_with_invalid_params_renders_new
+-------------------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+Started GET "/employer/jobs/new" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by Employer::JobsController#new as HTML
+Started POST "/employer/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by Employer::JobsController#create as HTML
+  Parameters: {"job" => {"title" => "", "location" => "", "category_id" => "242652078"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------
+Employer::JobsControllerTest: test_edit_renders_form
+----------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Started GET "/employer/jobs/305584985/edit" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by Employer::JobsController#edit as HTML
+  Parameters: {"id" => "305584985"}
+  Rendering layout layouts/application.html.erb
+  Rendering admin/users/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["user_id", 556383200], ["id", 305584985], ["LIMIT", 1]]
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 23.9ms | ActiveRecord: 0.8ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Processing by Employer::ApplicationsController#status as HTML
+  Parameters: {"status" => "reviewed", "id" => "647134511"}
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | GC: 0.0ms)
+Started GET "/employer/jobs/305584985/edit" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 25.7ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employer/jobs/edit.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendering layout layouts/application.html.erb
+  Rendering employer/jobs/new.html.erb within layouts/application
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 11.1ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "jobs"."user_id" = ? AND "job_applications"."id" = ? LIMIT ?[0m  [["user_id", 556383200], ["id", 647134511], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+Seeker::SavedControllerTest: test_employer_cannot_access_saved_jobs
+-------------------------------------------------------------------
+-----------------------------------------------------------
+Employer::JobsControllerTest: test_destroy_archives_the_job
+-----------------------------------------------------------
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  [1m[36mJobApplication Update (0.1ms)[0m  [1m[33mUPDATE "job_applications" SET "status" = ?, "status_changed_at" = ?, "updated_at" = ? WHERE "job_applications"."id" = ?[0m  [["status", 1], ["status_changed_at", "2026-02-19 09:05:58.054527"], ["updated_at", "2026-02-19 09:05:58.054626"], ["id", 647134511]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Started DELETE "/employer/jobs/305584985" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by Employer::JobsController#edit as HTML
+  Parameters: {"id" => "305584985"}
+  Rendering layout layouts/application.html.erb
+  Rendering employer/jobs/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+Started GET "/seeker/saved" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by Employer::JobsController#destroy as HTML
+  Parameters: {"id" => "305584985"}
+Processing by Seeker::SavedController#index as HTML
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 305584985], ["record_type", "Job"], ["name", "body"], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["user_id", 556383200], ["id", 305584985], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :require_seeker! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------
+Seeker::SavedControllerTest: test_seeker_can_view_saved_jobs
+------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJob Update (0.1ms)[0m  [1m[33mUPDATE "jobs" SET "status" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["status", 3], ["updated_at", "2026-02-19 09:05:58.061494"], ["id", 305584985]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/employer/jobs
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+Started GET "/seeker/saved" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Processing by Seeker::SavedController#index as HTML
+  Rendered shared/_status_badge.html.erb (Duration: 0.7ms | GC: 0.0ms)
+[ActionCable] Broadcasting to seeker_886196631_applications: "<turbo-stream action=\"replace\" target=\"status_job_application_647134511\"><template><turbo-frame id=\"status_job_application_647134511\">\n  <span class=\"inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800\">\n    Reviewed\n  </span>\n</turbo...
+  Rendered employer/jobs/_form.html.erb (Duration: 13.4ms | GC: 0.0ms)
+  Rendered employer/jobs/edit.html.erb within layouts/application (Duration: 14.2ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["user_id", 177190732], ["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Completed 404 Not Found in 9ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+---------------------------------------------------------------------
+Employer::DashboardControllerTest: test_employer_can_access_dashboard
+---------------------------------------------------------------------
+  
+ActiveRecord::RecordNotFound (Couldn't find Job with 'id'="305584985" [WHERE "jobs"."user_id" = ?]):
+  
+app/controllers/employer/jobs_controller.rb:42:in 'Employer::JobsController#set_job'
+test/controllers/employer/jobs_controller_test.rb:67:in 'block in <class:JobsControllerTest>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  Rendered employer/jobs/_form.html.erb (Duration: 9.3ms | GC: 0.0ms)
+  Rendered employer/jobs/new.html.erb within layouts/application (Duration: 9.6ms | GC: 0.0ms)
+  Rendered employer/jobs/_form.html.erb (Duration: 14.5ms | GC: 0.0ms)
+  Rendered employer/jobs/new.html.erb within layouts/application (Duration: 14.9ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+Employer::DashboardControllerTest: test_seeker_cannot_access_employer_dashboard
+-------------------------------------------------------------------------------
+Started GET "/employer/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering seeker/saved/index.html.erb within layouts/application
+Started GET "/employer/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by Employer::DashboardController#show as HTML
+  [1m[36mSavedJob Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 1]]
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? ORDER BY "saved_jobs"."created_at" DESC[0m  [["user_id", 886196631]]
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: cf4c0475-a22d-4eac-98b6-7f20f30a48c5) to Test(default) with arguments: "JobApplicationMailer", "status_changed", "deliver_now", {args: [#<GlobalID:0x00000001049381e0 @uri=#<URI::GID gid://jobboard/JobApplication/647134511>>]}
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs" WHERE "jobs"."user_id" = ?[0m  [["user_id", 556383200]]
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs" WHERE "jobs"."user_id" = ? AND "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?)[0m  [["user_id", 556383200], ["status", 1], [nil, "2026-02-19"]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "jobs"."user_id" = ?[0m  [["user_id", 556383200]]
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "jobs"."user_id" = ? AND (job_applications.created_at >= ?)[0m  [["user_id", 556383200], [nil, "2026-02-12 09:05:58.070019"]]
+  Rendering layout layouts/application.html.erb
+  Rendering employer/dashboard/show.html.erb within layouts/application
+Processing by Employer::DashboardController#show as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :require_employer! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJobApplication Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "jobs"."user_id" = ? LIMIT ?[0m  [["user_id", 556383200], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 200141451]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJobApplication Load (0.2ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "jobs"."user_id" = ? ORDER BY "job_applications"."created_at" DESC LIMIT ?[0m  [["user_id", 556383200], ["LIMIT", 10]]
+Redirected to http://www.example.com/employer/jobs/305584985/applications
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 302 Found in 27ms (ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 886196631]]
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 305584985]]
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | GC: 0.0ms)
+  [1m[36mCACHE Job Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."id" = ? LIMIT ?[0m  [["id", 647134511], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+--------------------------------------------------------------------------
+Employer::DashboardControllerTest: test_unauthenticated_user_is_redirected
+--------------------------------------------------------------------------
+  [1m[36mJob Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "jobs" WHERE "jobs"."user_id" = ? LIMIT ?[0m  [["user_id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."user_id" = ? ORDER BY "jobs"."created_at" DESC LIMIT ?[0m  [["user_id", 556383200], ["LIMIT", 5]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 242652078], ["id", 344023402]]
+  Rendered employer/dashboard/show.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+Started GET "/employer/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Processing by Employer::DashboardController#show as HTML
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 1.0ms (12 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 223304243]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+Admin::JobsControllerTest: test_destroy_removes_job
+----------------------------------------------------
+Admin::JobsControllerTest: test_index_shows_all_jobs
+----------------------------------------------------
+---------------------------------------------------
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | GC: 0.0ms)
+-------------------------------------------------------
+Admin::JobsControllerTest: test_non-admin_cannot_access
+-------------------------------------------------------
+Completed 422 Unprocessable Content in 42ms (Views: 30.2ms | ActiveRecord: 0.2ms (2 queries, 1 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 177190732]]
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Started GET "/admin/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mCACHE Job Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 557488621], ["LIMIT", 1]]
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Completed 200 OK in 45ms (Views: 30.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------
+JobsControllerTest: test_seeker_can_apply_to_published_job
+----------------------------------------------------------
+Started DELETE "/admin/jobs/557488621" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Started GET "/admin/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 527713537], ["LIMIT", 1]]
+  [1m[36mJobApplication Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications"[0m
+Processing by Admin::JobsController#destroy as HTML
+  Parameters: {"id" => "557488621"}
+Processing by Admin::JobsController#index as HTML
+Processing by Admin::JobsController#index as HTML
+Redirected to http://www.example.com/
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Filter chain halted as :require_admin! rendered or redirected
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 557488621], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------
+JobsControllerTest: test_index_with_sort_parameter
+--------------------------------------------------
+Started POST "/jobs/305584985/apply" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+-----------------------------------------------------------
+JobsControllerTest: test_duplicate_application_is_prevented
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 557488621], ["record_type", "Job"], ["name", "body"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered seeker/saved/index.html.erb within layouts/application (Duration: 16.8ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+Started GET "/jobs?sort=salary_high" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications"[0m
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."job_id" = ?[0m  [["job_id", 557488621]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/jobs/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+JobsControllerTest: test_show_renders_published_job
+---------------------------------------------------
+Started POST "/jobs/305584985/apply" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | GC: 0.0ms)
+Processing by JobsController#index as HTML
+  Parameters: {"sort" => "salary_high"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" ORDER BY "jobs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mSavedJob Load (0.1ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."job_id" = ?[0m  [["job_id", 557488621]]
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.3ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mJob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 557488621]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Processing by JobsController#apply as HTML
+  Parameters: {"cover_letter" => "I'm interested", "id" => "305584985"}
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?)) AS subquery_for_count[0m  [["status", 1], [nil, "2026-02-19"]]
+Processing by JobsController#apply as HTML
+  [1m[36mCategory Update All (0.1ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) - ? WHERE "categories"."id" = ?[0m  [["jobs_count", 1], ["id", 344023402]]
+  Parameters: {"cover_letter" => "Again", "id" => "305584985"}
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 223304243], ["id", 242652078], ["id", 344023402]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/jobs/305584985" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 177190732], ["id", 556383200]]
+------------------------------------------------
+JobsControllerTest: test_seeker_can_unsave_a_job
+------------------------------------------------
+Redirected to http://www.example.com/admin/jobs
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms (6 queries, 0 cached) | GC: 0.0ms)
+  Rendering layout layouts/application.html.erb
+  Rendered admin/jobs/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["status", 1], ["id", 305584985], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["status", 1], ["id", 305584985], ["LIMIT", 1]]
+  [1m[36mSavedJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs"[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 200141451], ["LIMIT", 1]]
+Started DELETE "/jobs/200141451/unsave_job" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id" => "305584985"}
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mJobApplication Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."job_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["job_id", 305584985], ["LIMIT", 1]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  Rendered jobs/_search.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  [1m[36mJobApplication Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."job_id" = ? LIMIT ?[0m  [["user_id", 527713537], ["job_id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 556383200]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) ORDER BY "jobs"."created_at" DESC, "jobs"."salary_max" DESC LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 12], ["OFFSET", 0]]
+  [1m[36mJobApplication Create (0.2ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["cover_letter", "I'm interested"], ["created_at", "2026-02-19 09:05:58.090684"], ["job_id", 305584985], ["status", 0], ["status_changed_at", nil], ["updated_at", "2026-02-19 09:05:58.090684"], ["user_id", 527713537]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+JobsControllerTest: test_index_with_category_filter
+---------------------------------------------------
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + ? WHERE "jobs"."id" = ?[0m  [["applications_count", 1], ["id", 305584985]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering jobs/show.html.erb within layouts/application
+Processing by JobsController#unsave_job as HTML
+  Parameters: {"id" => "200141451"}
+Started GET "/jobs?category=engineering" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Redirected to http://www.example.com/jobs/305584985
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 200141451], ["LIMIT", 1]]
+  Rendered employer/applications/_application_row.html.erb (Duration: 1.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_556383200_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><tr id=\"job_application_647134512\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Charlie Brown</div>\n    <div class=\"text-sm text-gray-500\">seeker2@example.com</div...
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 242652078], ["id", 223304243]]
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? AND "saved_jobs"."job_id" = ?[0m  [["user_id", 886196631], ["job_id", 200141451]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 556383200], ["id", 177190732]]
+Processing by JobsController#index as HTML
+  Parameters: {"category" => "engineering"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSavedJob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "saved_jobs" WHERE "saved_jobs"."id" = ?[0m  [["id", 895143111]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------
+JobsControllerTest: test_index_with_search_params
+-------------------------------------------------
+Redirected to http://www.example.com/jobs/200141451
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+Redirected to http://www.example.com/jobs/305584985
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = ? AND "action_text_rich_texts"."record_type" = ? AND "action_text_rich_texts"."name" = ? LIMIT ?[0m  [["record_id", 305584985], ["record_type", "Job"], ["name", "body"], ["LIMIT", 1]]
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "jobs"."id") FROM "jobs" INNER JOIN "categories" ON "categories"."id" = "jobs"."category_id" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "categories"."slug" = ?[0m  [["status", 1], [nil, "2026-02-19"], ["slug", "engineering"]]
+Started GET "/jobs?q[title_or_location_or_user_company_name_cont]=Rails" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mSavedJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs"[0m
+Processing by JobsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Parameters: {"q" => {"title_or_location_or_user_company_name_cont" => "Rails"}}
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered jobs/show.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------
+JobsControllerTest: test_index_with_job_type_filter
+---------------------------------------------------
+---------------------------------------------------------
+JobsControllerTest: test_save_job_requires_authentication
+---------------------------------------------------------
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  Rendered jobs/_job.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Started GET "/jobs?job_type=full_time" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  Rendered jobs/_search.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms (4 queries, 0 cached) | GC: 0.0ms)
+Processing by JobsController#index as HTML
+  Parameters: {"job_type" => "full_time"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered jobs/_job.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered jobs/index.html.erb within layouts/application (Duration: 10.9ms | GC: 0.0ms)
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" INNER JOIN "categories" ON "categories"."id" = "jobs"."category_id" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "categories"."slug" = ? LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["slug", "engineering"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.2ms (4 queries, 0 cached) | GC: 0.0ms)
+Started POST "/jobs/305584985/save_job" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mJob Eager Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs"."id" AS t0_r0, "jobs"."applications_count" AS t0_r1, "jobs"."category_id" AS t0_r2, "jobs"."created_at" AS t0_r3, "jobs"."expires_at" AS t0_r4, "jobs"."job_type" AS t0_r5, "jobs"."location" AS t0_r6, "jobs"."salary_max" AS t0_r7, "jobs"."salary_min" AS t0_r8, "jobs"."status" AS t0_r9, "jobs"."title" AS t0_r10, "jobs"."updated_at" AS t0_r11, "jobs"."user_id" AS t0_r12, "categories"."id" AS t1_r0, "categories"."created_at" AS t1_r1, "categories"."jobs_count" AS t1_r2, "categories"."name" AS t1_r3, "categories"."slug" AS t1_r4, "categories"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."bio" AS t2_r1, "users"."company_name" AS t2_r2, "users"."created_at" AS t2_r3, "users"."email" AS t2_r4, "users"."encrypted_password" AS t2_r5, "users"."full_name" AS t2_r6, "users"."remember_created_at" AS t2_r7, "users"."reset_password_sent_at" AS t2_r8, "users"."reset_password_token" AS t2_r9, "users"."role" AS t2_r10, "users"."updated_at" AS t2_r11 FROM "jobs" INNER JOIN "categories" ON "categories"."id" = "jobs"."category_id" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "categories"."slug" = ? ORDER BY "jobs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["slug", "engineering"], ["LIMIT", 12], ["OFFSET", 0]]
+Processing by JobsController#save_job as HTML
+  Parameters: {"id" => "305584985"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "jobs"."job_type" = ?) AS subquery_for_count[0m  [["status", 1], [nil, "2026-02-19"], ["job_type", 0]]
+----------------------------------------------
+JobsControllerTest: test_seeker_can_save_a_job
+----------------------------------------------
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "jobs".* FROM "jobs" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND (("jobs"."title" LIKE '%Rails%' OR "jobs"."location" LIKE '%Rails%') OR "users"."company_name" LIKE '%Rails%')) AS subquery_for_count[0m  [["status", 1], [nil, "2026-02-19"]]
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendering layout layouts/application.html.erb
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 527713537], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering jobs/index.html.erb within layouts/application
+  Rendered jobs/_job.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered jobs/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  [1m[36mSavedJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs"[0m
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.6ms (6 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered jobs/_search.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "jobs"."job_type" = ? LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["job_type", 0], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered jobs/_search.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "jobs"."job_type" = ? ORDER BY "jobs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["job_type", 0], ["LIMIT", 12], ["OFFSET", 0]]
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND (("jobs"."title" LIKE '%Rails%' OR "jobs"."location" LIKE '%Rails%') OR "users"."company_name" LIKE '%Rails%') LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 556383200]]
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" LEFT OUTER JOIN "users" ON "users"."id" = "jobs"."user_id" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND (("jobs"."title" LIKE '%Rails%' OR "jobs"."location" LIKE '%Rails%') OR "users"."company_name" LIKE '%Rails%') ORDER BY "jobs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 12], ["OFFSET", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered jobs/_job.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered jobs/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------
+JobsControllerTest: test_apply_requires_authentication
+------------------------------------------------------
+Started POST "/jobs/305584985/save_job" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 556383200]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Processing by JobsController#save_job as HTML
+  Parameters: {"id" => "305584985"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+---------------------------------------------------
+JobsControllerTest: test_index_renders_successfully
+---------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+JobsControllerTest: test_employer_cannot_apply_to_job
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+JobTest: test_by_type_scope_filters_correctly
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["status", 1], ["id", 305584985], ["LIMIT", 1]]
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Started GET "/jobs" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Processing by JobsController#index as HTML
+Started POST "/jobs/305584985/apply" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? AND "saved_jobs"."job_id" = ? LIMIT ?[0m  [["user_id", 527713537], ["job_id", 305584985], ["LIMIT", 1]]
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms (6 queries, 0 cached) | GC: 0.0ms)
+Started POST "/jobs/305584985/apply" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Processing by JobsController#apply as HTML
+  Parameters: {"id" => "305584985"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND "jobs"."id" = ? LIMIT ?[0m  [["status", 1], ["id", 305584985], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/jobs/305584985
+  [1m[36mSavedJob Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? AND "saved_jobs"."job_id" = ? LIMIT ?[0m  [["user_id", 527713537], ["job_id", 305584985], ["LIMIT", 1]]
+---------------------------------------------
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?)) AS subquery_for_count[0m  [["status", 1], [nil, "2026-02-19"]]
+  [1m[36mSavedJob Create (0.1ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-19 09:05:58.108741"], ["job_id", 305584985], ["updated_at", "2026-02-19 09:05:58.108741"], ["user_id", 527713537]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by JobsController#apply as HTML
+  Parameters: {"id" => "305584985"}
+Redirected to http://www.example.com/jobs/305584985
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms (4 queries, 0 cached) | GC: 0.0ms)
+  Rendering layout layouts/application.html.erb
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------
+JobTest: test_valid_published_job
+---------------------------------
+-------------------------------
+JobTest: test_requires_location
+-------------------------------
+  Rendered jobs/_job.html.erb (Duration: 3.6ms | GC: 0.0ms)
+  Rendered jobs/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mSavedJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs"[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC[0m
+  [1m[36mJob Create (0.1ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["applications_count", 0], ["category_id", 242652078], ["created_at", "2026-02-19 09:05:58.110540"], ["expires_at", nil], ["job_type", 0], ["location", "NYC"], ["salary_max", nil], ["salary_min", nil], ["status", 1], ["title", "FT Job"], ["updated_at", "2026-02-19 09:05:58.110540"], ["user_id", 556383200]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------
+JobTest: test_salary_max_must_be_>=_salary_min
+----------------------------------------------
+  Rendered jobs/_search.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + ? WHERE "categories"."id" = ?[0m  [["jobs_count", 1], ["id", 242652078]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+JobTest: test_expired?_returns_false_for_future_dates
+-----------------------------------------------------
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) ORDER BY "jobs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["status", 1], [nil, "2026-02-19"], ["LIMIT", 12], ["OFFSET", 0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?)[0m  [["id", 223304243], ["id", 242652078]]
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.4ms (6 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."job_type" = ?[0m  [["job_type", 0]]
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 177190732], ["id", 556383200]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+--------------------------------------------------
+JobTest: test_expired?_returns_true_for_past_dates
+--------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------
+JobTest: test_requires_title
+----------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------
+JobTest: test_active_scope_returns_published_non-expired_jobs
+-------------------------------------------------------------
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 242652078], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------
+JobTest: test_enum_values
+-------------------------
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?)[0m  [["status", 1], [nil, "2026-02-19"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered jobs/_job.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------
+JobTest: test_company_name_delegates_to_user
+--------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered jobs/_job.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered jobs/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+-----------------------------------------------------------------------------------
+Seeker::ApplicationsControllerTest: test_employer_cannot_access_seeker_applications
+-----------------------------------------------------------------------------------
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms (6 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+Seeker::ApplicationsControllerTest: test_seeker_can_view_their_applications
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+----------------------------------------------
+SavedJobTest: test_uniqueness_per_user_per_job
+----------------------------------------------
+Started GET "/seeker/applications" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------
+SavedJobTest: test_valid_saved_job
+----------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+Admin::DashboardControllerTest: test_admin_can_access_dashboard
+---------------------------------------------------------------
+Started GET "/seeker/applications" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+Admin::DashboardControllerTest: test_employer_cannot_access_admin_dashboard
+---------------------------------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 527713537], ["LIMIT", 1]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 305584985], ["LIMIT", 1]]
+Started GET "/admin/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------
+Admin::DashboardControllerTest: test_seeker_cannot_access_admin_dashboard
+-------------------------------------------------------------------------
+  [1m[36mSavedJob Load (0.1ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."id" = ? LIMIT ?[0m  [["id", 895143111], ["LIMIT", 1]]
+Processing by Seeker::ApplicationsController#index as HTML
+Processing by Seeker::ApplicationsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :require_seeker! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendering layout layouts/application.html.erb
+  Rendering seeker/applications/index.html.erb within layouts/application
+  [1m[36mSavedJob Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? AND "saved_jobs"."job_id" = ? LIMIT ?[0m  [["user_id", 527713537], ["job_id", 305584985], ["LIMIT", 1]]
+Processing by Admin::DashboardController#show as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Started GET "/admin/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Started GET "/admin/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mUser Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "jobs"[0m
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------
+Seeker::DashboardControllerTest: test_seeker_can_access_dashboard
+-----------------------------------------------------------------
+  [1m[36mJobApplication Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------
+Seeker::DashboardControllerTest: test_employer_cannot_access_seeker_dashboard
+-----------------------------------------------------------------------------
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = ? ORDER BY "job_applications"."created_at" DESC[0m  [["user_id", 886196631]]
+Processing by Admin::DashboardController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/dashboard/show.html.erb within layouts/application
+Processing by Admin::DashboardController#show as HTML
+Redirected to http://www.example.com/
+Started GET "/seeker/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+Filter chain halted as :require_admin! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Filter chain halted as :require_admin! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" ORDER BY "jobs"."created_at" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Started GET "/seeker/dashboard" for 127.0.0.1 at 2026-02-19 03:05:58 -0600
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (?, ?, ?)[0m  [["id", 223304243], ["id", 242652078], ["id", 344023402]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 200141451], ["LIMIT", 1]]
+Processing by Seeker::DashboardController#show as HTML
+Processing by Seeker::DashboardController#show as HTML
+  [1m[36mSavedJob Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? AND "saved_jobs"."job_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["job_id", 200141451], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 177190732], ["id", 556383200]]
+Redirected to http://www.example.com/
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+Filter chain halted as :require_seeker! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" WHERE "job_applications"."user_id" = ?[0m  [["user_id", 886196631]]
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."status" = ?[0m  [["user_id", 886196631], ["status", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC LIMIT ?[0m  [["LIMIT", 10]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered admin/dashboard/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" WHERE "job_applications"."user_id" = ? AND "job_applications"."status" = ?[0m  [["user_id", 886196631], ["status", 3]]
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 305584985]]
+  [1m[36mSavedJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ?[0m  [["user_id", 886196631]]
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 556383200]]
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mJobApplication Pluck (0.0ms)[0m  [1m[34mSELECT "jobs"."category_id" FROM "job_applications" INNER JOIN "jobs" ON "jobs"."id" = "job_applications"."job_id" WHERE "job_applications"."user_id" = ?[0m  [["user_id", 886196631]]
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered seeker/applications/index.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.5ms (7 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendering layout layouts/application.html.erb
+  Rendering seeker/dashboard/show.html.erb within layouts/application
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------
+UserTest: test_valid_user_with_seeker_role
+------------------------------------------
+  [1m[36mJobApplication Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = ? ORDER BY "job_applications"."created_at" DESC LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------
+UserTest: test_employer_requires_company_name
+---------------------------------------------
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 305584985]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------
+UserTest: test_role_helper_methods_work
+---------------------------------------
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 242652078]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 556383200]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 135138680], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mSavedJob Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 886196631], ["LIMIT", 1]]
+  [1m[36mSavedJob Load (0.1ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = ? ORDER BY "saved_jobs"."created_at" DESC LIMIT ?[0m  [["user_id", 886196631], ["LIMIT", 5]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 200141451]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------
+UserTest: test_requires_full_name
+---------------------------------
+---------------------------
+UserTest: test_associations
+---------------------------
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 223304243]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 177190732]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 556383200], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mJob Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "jobs" WHERE "jobs"."status" = ? AND (expires_at IS NULL OR expires_at >= ?) AND "jobs"."category_id" = ? AND "jobs"."id" NOT IN (SELECT "job_applications"."job_id" FROM "job_applications" WHERE "job_applications"."user_id" = ?) LIMIT ?[0m  [["status", 1], [nil, "2026-02-19"], ["category_id", 242652078], ["user_id", 886196631], ["LIMIT", 1]]
+  Rendered seeker/dashboard/show.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------
+UserTest: test_employer_with_company_name_is_valid
+--------------------------------------------------
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.5ms (16 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

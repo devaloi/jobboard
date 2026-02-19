@@ -523,3 +523,994 @@ FOREIGN KEY ("job_id")
   [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("user_id", "job_id", "created_at", "updated_at") VALUES (9, 13, '2026-02-19 09:02:31.234249', '2026-02-19 09:02:31.234249') RETURNING "id" /*application='Jobboard'*/[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
   [1m[36mSavedJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" /*application='Jobboard'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "content_type" varchar, "created_at" datetime(6) NOT NULL, "filename" varchar NOT NULL, "key" varchar NOT NULL, "metadata" text, "service_name" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "jobs_count" integer DEFAULT 0 NOT NULL, "name" varchar NOT NULL, "slug" varchar NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_categories_on_slug" ON "categories" ("slug") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "bio" text, "company_name" varchar, "created_at" datetime(6) NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "full_name" varchar DEFAULT '' NOT NULL, "remember_created_at" datetime(6), "reset_password_sent_at" datetime(6), "reset_password_token" varchar, "role" integer DEFAULT 0 NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","blob_id","created_at","name","record_id","record_type")
+                     SELECT "id","blob_id","created_at","name","record_id","record_type" FROM "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","blob_id","created_at","name","record_id","record_type")
+                     SELECT "id","blob_id","created_at","name","record_id","record_type" FROM "aactive_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_user_id" ON "ajob_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ajob_applications_on_user_id_and_job_id" ON "ajob_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_status" ON "ajob_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_job_id" ON "ajob_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajob_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_82b18fab66"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_user_id" ON "ajob_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ajob_applications_on_user_id_and_job_id" ON "ajob_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_status" ON "ajob_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_job_id" ON "ajob_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajob_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_82b18fab66"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+, CONSTRAINT "fk_rails_0e9ee51b69"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_user_id" ON "ajobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status" ON "ajobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status_and_expires_at" ON "ajobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_job_type" ON "ajobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_expires_at" ON "ajobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_category_id" ON "ajobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1cf0b3b406"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "jobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "ajobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_user_id" ON "ajobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status" ON "ajobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status_and_expires_at" ON "ajobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_job_type" ON "ajobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_expires_at" ON "ajobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_category_id" ON "ajobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1cf0b3b406"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_df6238c8a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "jobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "ajobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asaved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_user_id" ON "asaved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_asaved_jobs_on_user_id_and_job_id" ON "asaved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_job_id" ON "asaved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asaved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1c8f8a4576"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asaved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_user_id" ON "asaved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_asaved_jobs_on_user_id_and_job_id" ON "asaved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_job_id" ON "asaved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asaved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1c8f8a4576"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+, CONSTRAINT "fk_rails_dae508240e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260219084937) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260219084901),
+(20260219084401),
+(20260219084400),
+(20260219084356),
+(20260219084303),
+(20260219083924); /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-19 09:06:05.401086', '2026-02-19 09:06:05.401087') RETURNING "key" /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '114093503d930b49280556741f90aa5097aba7b8', '2026-02-19 09:06:05.402041', '2026-02-19 09:06:05.402041') RETURNING "key" /*application='Jobboard'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" /*application='Jobboard'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "content_type" varchar, "created_at" datetime(6) NOT NULL, "filename" varchar NOT NULL, "key" varchar NOT NULL, "metadata" text, "service_name" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "jobs_count" integer DEFAULT 0 NOT NULL, "name" varchar NOT NULL, "slug" varchar NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_categories_on_slug" ON "categories" ("slug") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "bio" text, "company_name" varchar, "created_at" datetime(6) NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "full_name" varchar DEFAULT '' NOT NULL, "remember_created_at" datetime(6), "reset_password_sent_at" datetime(6), "reset_password_token" varchar, "role" integer DEFAULT 0 NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","blob_id","created_at","name","record_id","record_type")
+                     SELECT "id","blob_id","created_at","name","record_id","record_type" FROM "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "active_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "name" varchar NOT NULL, "record_id" bigint NOT NULL, "record_type" varchar NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","blob_id","created_at","name","record_id","record_type")
+                     SELECT "id","blob_id","created_at","name","record_id","record_type" FROM "aactive_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_user_id" ON "ajob_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ajob_applications_on_user_id_and_job_id" ON "ajob_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_status" ON "ajob_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_job_id" ON "ajob_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajob_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_82b18fab66"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajob_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_user_id" ON "ajob_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ajob_applications_on_user_id_and_job_id" ON "ajob_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_status" ON "ajob_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajob_applications_on_job_id" ON "ajob_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajob_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "job_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cover_letter" text, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_82b18fab66"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+, CONSTRAINT "fk_rails_0e9ee51b69"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id")
+                     SELECT "id","cover_letter","created_at","job_id","status","status_changed_at","updated_at","user_id" FROM "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajob_applications" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_user_id" ON "ajobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status" ON "ajobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status_and_expires_at" ON "ajobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_job_type" ON "ajobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_expires_at" ON "ajobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_category_id" ON "ajobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1cf0b3b406"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "jobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "ajobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ajobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_user_id" ON "ajobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status" ON "ajobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_status_and_expires_at" ON "ajobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_job_type" ON "ajobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_expires_at" ON "ajobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_ajobs_on_category_id" ON "ajobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ajobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "applications_count" integer DEFAULT 0 NOT NULL, "category_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "expires_at" date, "job_type" integer DEFAULT 0 NOT NULL, "location" varchar NOT NULL, "salary_max" integer, "salary_min" integer, "status" integer DEFAULT 0 NOT NULL, "title" varchar NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1cf0b3b406"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_df6238c8a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_category_id" ON "jobs" ("category_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_expires_at" ON "jobs" ("expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_job_type" ON "jobs" ("job_type") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status_and_expires_at" ON "jobs" ("status", "expires_at") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_status" ON "jobs" ("status") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_jobs_on_user_id" ON "jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "jobs" ("id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id")
+                     SELECT "id","applications_count","category_id","created_at","expires_at","job_type","location","salary_max","salary_min","status","title","updated_at","user_id" FROM "ajobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "ajobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asaved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_user_id" ON "asaved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_asaved_jobs_on_user_id_and_job_id" ON "asaved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_job_id" ON "asaved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asaved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1c8f8a4576"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asaved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_user_id" ON "asaved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_asaved_jobs_on_user_id_and_job_id" ON "asaved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asaved_jobs_on_job_id" ON "asaved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asaved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "saved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "job_id" integer NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_1c8f8a4576"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+, CONSTRAINT "fk_rails_dae508240e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("id","created_at","job_id","updated_at","user_id")
+                     SELECT "id","created_at","job_id","updated_at","user_id" FROM "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asaved_jobs" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260219084937) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260219084901),
+(20260219084401),
+(20260219084400),
+(20260219084356),
+(20260219084303),
+(20260219083924); /*application='Jobboard'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-02-19 09:06:05.502878', '2026-02-19 09:06:05.502878') RETURNING "key" /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2026-02-19 09:06:05.503807' WHERE "ar_internal_metadata"."key" = 'environment' /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '114093503d930b49280556741f90aa5097aba7b8', '2026-02-19 09:06:05.504399', '2026-02-19 09:06:05.504399') RETURNING "key" /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.521198', 0, 'Engineering', 'engineering', '2026-02-19 09:06:05.521198') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.524606', 0, 'Design', 'design', '2026-02-19 09:06:05.524606') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Marketing' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Marketing' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'marketing' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.527273', 0, 'Marketing', 'marketing', '2026-02-19 09:06:05.527273') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Sales' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Sales' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'sales' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.530213', 0, 'Sales', 'sales', '2026-02-19 09:06:05.530213') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Product' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Product' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'product' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.532824', 0, 'Product', 'product', '2026-02-19 09:06:05.532824') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Finance' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Finance' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'finance' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.535415', 0, 'Finance', 'finance', '2026-02-19 09:06:05.535415') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Operations' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Operations' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'operations' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.538046', 0, 'Operations', 'operations', '2026-02-19 09:06:05.538046') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Customer Support' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Customer Support' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'customer-support' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.542204', 0, 'Customer Support', 'customer-support', '2026-02-19 09:06:05.542204') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Data Science' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'Data Science' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'data-science' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.545058', 0, 'Data Science', 'data-science', '2026-02-19 09:06:05.545058') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'DevOps' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = 'DevOps' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."slug" = 'devops' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("created_at", "jobs_count", "name", "slug", "updated_at") VALUES ('2026-02-19 09:06:05.547906', 0, 'DevOps', 'devops', '2026-02-19 09:06:05.547906') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@jobboard.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@jobboard.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES (NULL, NULL, '2026-02-19 09:06:05.774647', 'admin@jobboard.test', '$2a$12$JxXeW3nIGHFCj/I3YOW...BP9PQhhFKWLMr0ua8vN1r.B740Vd/7G', 'Admin User', NULL, NULL, NULL, 2, '2026-02-19 09:06:05.774647') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'jane@techcorp.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jane@techcorp.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Leading technology company specializing in cloud infrastructure.', 'TechCorp Inc', '2026-02-19 09:06:05.997019', 'jane@techcorp.test', '$2a$12$Y9JjunTG9/SpOXjA/mly2uguV1MbgO5DxQpxZOGNVgcm9eVi12HT.', 'Jane Smith', NULL, NULL, NULL, 1, '2026-02-19 09:06:05.997019') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'bob@startupxyz.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'bob@startupxyz.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Fast-growing fintech startup disrupting payments.', 'StartupXYZ', '2026-02-19 09:06:06.214616', 'bob@startupxyz.test', '$2a$12$KwxOeveYg/Bb.GLNJFAGZe3ite20driUsX3diU56Eq8d0HCI4wMHa', 'Bob Johnson', NULL, NULL, NULL, 1, '2026-02-19 09:06:06.214616') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'maria@designstudio.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'maria@designstudio.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Award-winning design agency creating beautiful digital experiences.', 'Design Studio Co', '2026-02-19 09:06:06.432071', 'maria@designstudio.test', '$2a$12$detiHLDVSJ72lG9/6XnAFu3AqVrL8tz5rsr.3aH82E9wg2kLxG5EO', 'Maria Garcia', NULL, NULL, NULL, 1, '2026-02-19 09:06:06.432071') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'alice@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'alice@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Full-stack developer with 5 years of experience in Ruby and JavaScript.', NULL, '2026-02-19 09:06:06.648914', 'alice@example.test', '$2a$12$DfKBrycldNNUvNTIOSECqu6u9gLQGb7SeLltAlx/ulBbsx1BRBITO', 'Alice Williams', NULL, NULL, NULL, 0, '2026-02-19 09:06:06.648914') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'charlie@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'charlie@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('UX designer passionate about accessible and inclusive design.', NULL, '2026-02-19 09:06:06.866268', 'charlie@example.test', '$2a$12$HCs6BvjCU05D/0w72IH3t.nK72pR516dL7he9ZQ8DyeEf33EH.OTC', 'Charlie Brown', NULL, NULL, NULL, 0, '2026-02-19 09:06:06.866268') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'diana@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'diana@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Marketing specialist with expertise in growth hacking and SEO.', NULL, '2026-02-19 09:06:07.086155', 'diana@example.test', '$2a$12$qGmT8rNKDSZrPD/vhKy6OeMJnVEVUSx4RayhTsygLngiAxFzlaJLm', 'Diana Chen', NULL, NULL, NULL, 0, '2026-02-19 09:06:07.086155') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'evan@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'evan@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Data scientist skilled in Python, R, and machine learning.', NULL, '2026-02-19 09:06:07.303725', 'evan@example.test', '$2a$12$.ZG5gurbA4Pfu.T.BYpH4ugQZFbqm5KDKXGmiOvV6135VtvWC4QHK', 'Evan Martinez', NULL, NULL, NULL, 0, '2026-02-19 09:06:07.303725') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'fiona@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'fiona@example.test' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("bio", "company_name", "created_at", "email", "encrypted_password", "full_name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "role", "updated_at") VALUES ('Product manager with experience shipping B2B SaaS products.', NULL, '2026-02-19 09:06:07.521494', 'fiona@example.test', '$2a$12$erI.EPglRBtUZAhJIbCXAONq6i73b7z2UnYHrg8SYiBK7/jm6V.3O', 'Fiona O''Brien', NULL, NULL, NULL, 0, '2026-02-19 09:06:07.521494') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Senior Rails Developer' AND "jobs"."user_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.1ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 1, '2026-02-19 09:06:07.530307', '2026-04-18', 0, 'San Francisco, CA', 200000, 150000, 1, 'Senior Rails Developer', '2026-02-19 09:06:07.530307', 2) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<h3>About the Role</h3><p>We''re looking for a Senior Rails Developer to join our platform team. You''ll build and maintain our core API, work with microservices, and mentor junior developers.</p><h3>Requirements</h3><ul><li>5+ years Ruby on Rails experience</li><li>Strong PostgreSQL/database skills</li><li>Experience with Hotwire (Turbo + Stimulus)</li><li>Familiarity with CI/CD pipelines</li></ul><h3>Benefits</h3><ul><li>Competitive salary + equity</li><li>Remote-friendly</li><li>Health, dental, vision insurance</li><li>Unlimited PTO</li></ul>', '2026-02-19 09:06:07.547262', 'body', 1, 'Job', '2026-02-19 09:06:07.547262') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.548497' WHERE "jobs"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Junior Backend Developer' AND "jobs"."user_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 1, '2026-02-19 09:06:07.552662', '2026-04-07', 0, 'San Francisco, CA', 110000, 80000, 1, 'Junior Backend Developer', '2026-02-19 09:06:07.552662', 2) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<h3>About the Role</h3><p>Great opportunity for a junior developer to learn and grow. You''ll work alongside senior engineers on our backend systems.</p><h3>Requirements</h3><ul><li>CS degree or bootcamp graduate</li><li>Familiarity with Ruby or Python</li><li>Eager to learn and grow</li></ul>', '2026-02-19 09:06:07.555455', 'body', 2, 'Job', '2026-02-19 09:06:07.555455') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.556599' WHERE "jobs"."id" = 2 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'DevOps' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'DevOps Engineer' AND "jobs"."user_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 10, '2026-02-19 09:06:07.561171', '2026-04-10', 3, 'Remote', 170000, 130000, 1, 'DevOps Engineer', '2026-02-19 09:06:07.561171', 2) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 10 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<h3>About the Role</h3><p>Manage our cloud infrastructure on AWS, implement CI/CD pipelines, and ensure 99.99% uptime for our services.</p><h3>Requirements</h3><ul><li>3+ years DevOps experience</li><li>AWS/GCP expertise</li><li>Docker and Kubernetes</li><li>Terraform experience</li></ul>', '2026-02-19 09:06:07.564390', 'body', 3, 'Job', '2026-02-19 09:06:07.564390') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.565507' WHERE "jobs"."id" = 3 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Product' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Technical Product Manager' AND "jobs"."user_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 5, '2026-02-19 09:06:07.568064', '2026-04-06', 0, 'San Francisco, CA', 180000, 140000, 1, 'Technical Product Manager', '2026-02-19 09:06:07.568064', 2) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 5 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Lead product strategy for our developer tools platform. Work closely with engineering and design to deliver features that developers love.</p>', '2026-02-19 09:06:07.570873', 'body', 4, 'Job', '2026-02-19 09:06:07.570873') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.571977' WHERE "jobs"."id" = 4 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Mobile Developer (iOS)' AND "jobs"."user_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 1, '2026-02-19 09:06:07.574332', NULL, 0, 'San Francisco, CA', 190000, 140000, 0, 'Mobile Developer (iOS)', '2026-02-19 09:06:07.574332', 2) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 5 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Build our iOS app from scratch using Swift and SwiftUI.</p>', '2026-02-19 09:06:07.577056', 'body', 5, 'Job', '2026-02-19 09:06:07.577056') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.579646' WHERE "jobs"."id" = 5 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Full Stack Developer' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (1.7ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 1, '2026-02-19 09:06:07.586509', '2026-04-10', 0, 'New York, NY', 160000, 120000, 1, 'Full Stack Developer', '2026-02-19 09:06:07.586509', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 6 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (1.8ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<h3>About StartupXYZ</h3><p>We''re a Series B fintech startup revolutionizing how businesses handle payments. Join our engineering team and build the future of finance.</p><h3>What You''ll Do</h3><ul><li>Build and maintain our Next.js + Rails stack</li><li>Implement payment processing features</li><li>Write clean, well-tested code</li></ul>', '2026-02-19 09:06:07.594174', 'body', 6, 'Job', '2026-02-19 09:06:07.594174') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.597930' WHERE "jobs"."id" = 6 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Marketing' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Growth Marketing Manager' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 3, '2026-02-19 09:06:07.602516', '2026-03-24', 0, 'New York, NY', 130000, 90000, 1, 'Growth Marketing Manager', '2026-02-19 09:06:07.602516', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 3 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 7 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Drive user acquisition and retention through data-driven marketing campaigns. Own our growth funnel from awareness to conversion.</p>', '2026-02-19 09:06:07.605534', 'body', 7, 'Job', '2026-02-19 09:06:07.605534') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 7 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.606639' WHERE "jobs"."id" = 7 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Sales' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Enterprise Account Executive' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 4, '2026-02-19 09:06:07.609201', '2026-04-13', 0, 'New York, NY', 150000, 100000, 1, 'Enterprise Account Executive', '2026-02-19 09:06:07.609201', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 4 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 8 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Close enterprise deals and build relationships with Fortune 500 companies. Base salary + uncapped commission.</p>', '2026-02-19 09:06:07.612050', 'body', 8, 'Job', '2026-02-19 09:06:07.612050') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 8 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.613138' WHERE "jobs"."id" = 8 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Finance' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Financial Analyst' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 6, '2026-02-19 09:06:07.615514', '2026-04-09', 0, 'New York, NY', 120000, 85000, 1, 'Financial Analyst', '2026-02-19 09:06:07.615514', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 6 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 9 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.8ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Support our CFO with financial modeling, budgeting, and investor reporting.</p>', '2026-02-19 09:06:07.618276', 'body', 9, 'Job', '2026-02-19 09:06:07.618276') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 9 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.619689' WHERE "jobs"."id" = 9 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Data Science' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Data Analyst' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 9, '2026-02-19 09:06:07.621857', '2026-03-27', 3, 'Remote', 130000, 95000, 1, 'Data Analyst', '2026-02-19 09:06:07.621857', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 9 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 10 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Analyze product usage data, build dashboards, and provide insights to drive product decisions.</p>', '2026-02-19 09:06:07.624390', 'body', 10, 'Job', '2026-02-19 09:06:07.624390') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 10 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.625487' WHERE "jobs"."id" = 10 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Engineering' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'QA Engineer' AND "jobs"."user_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 1, '2026-02-19 09:06:07.629301', NULL, 2, 'New York, NY', 125000, 90000, 2, 'QA Engineer', '2026-02-19 09:06:07.629301', 3) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 11 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Contract position for automated testing of our payment platform.</p>', '2026-02-19 09:06:07.632231', 'body', 11, 'Job', '2026-02-19 09:06:07.632231') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 11 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.633321' WHERE "jobs"."id" = 11 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Senior Product Designer' AND "jobs"."user_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 2, '2026-02-19 09:06:07.635827', '2026-03-10', 0, 'Los Angeles, CA', 170000, 130000, 1, 'Senior Product Designer', '2026-02-19 09:06:07.635827', 4) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 2 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 12 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<h3>The Opportunity</h3><p>Join our award-winning design team and shape the visual identity of products used by millions. We believe in design-driven development.</p><h3>What We''re Looking For</h3><ul><li>5+ years product design experience</li><li>Strong portfolio with web and mobile work</li><li>Proficiency in Figma</li><li>Experience with design systems</li></ul>', '2026-02-19 09:06:07.638809', 'body', 12, 'Job', '2026-02-19 09:06:07.638809') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 12 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.639903' WHERE "jobs"."id" = 12 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'UX Researcher' AND "jobs"."user_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 2, '2026-02-19 09:06:07.642286', '2026-03-30', 0, 'Los Angeles, CA', 140000, 100000, 1, 'UX Researcher', '2026-02-19 09:06:07.642286', 4) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 2 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 13 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Conduct user research to inform design decisions. Run usability tests, interviews, and surveys.</p>', '2026-02-19 09:06:07.645024', 'body', 13, 'Job', '2026-02-19 09:06:07.645024') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 13 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.646368' WHERE "jobs"."id" = 13 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Design' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Motion Designer' AND "jobs"."user_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 2, '2026-02-19 09:06:07.648526', '2026-03-25', 3, 'Remote', 120000, 80000, 1, 'Motion Designer', '2026-02-19 09:06:07.648526', 4) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 2 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 14 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Create beautiful animations and micro-interactions for web and mobile products.</p>', '2026-02-19 09:06:07.651047', 'body', 14, 'Job', '2026-02-19 09:06:07.651047') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 14 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.652139' WHERE "jobs"."id" = 14 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Marketing' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Content Strategist' AND "jobs"."user_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (1.7ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 3, '2026-02-19 09:06:07.654296', '2026-03-30', 1, 'Los Angeles, CA', 105000, 75000, 1, 'Content Strategist', '2026-02-19 09:06:07.654296', 4) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 3 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 15 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.8ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Develop content strategy for our clients'' digital platforms. Part-time position with flexible hours.</p>', '2026-02-19 09:06:07.658136', 'body', 15, 'Job', '2026-02-19 09:06:07.658136') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 15 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.659549' WHERE "jobs"."id" = 15 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = 'Operations' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."title" = 'Project Coordinator' AND "jobs"."user_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("applications_count", "category_id", "created_at", "expires_at", "job_type", "location", "salary_max", "salary_min", "status", "title", "updated_at", "user_id") VALUES (0, 7, '2026-02-19 09:06:07.662048', '2026-03-08', 0, 'Los Angeles, CA', 80000, 60000, 1, 'Project Coordinator', '2026-02-19 09:06:07.662048', 4) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mCategory Update All (0.0ms)[0m  [1m[33mUPDATE "categories" SET "jobs_count" = COALESCE("categories"."jobs_count", 0) + 1 WHERE "categories"."id" = 7 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Load (0.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 16 AND "action_text_rich_texts"."record_type" = 'Job' AND "action_text_rich_texts"."name" = 'body' LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActionText::RichText Create (0.8ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("body", "created_at", "name", "record_id", "record_type", "updated_at") VALUES ('<p>Coordinate client projects, manage timelines, and ensure smooth delivery of design work.</p>', '2026-02-19 09:06:07.664603', 'body', 16, 'Job', '2026-02-19 09:06:07.664603') RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 16 AND "active_storage_attachments"."record_type" = 'ActionText::RichText' AND "active_storage_attachments"."name" = 'embeds' /*application='Jobboard'*/[0m
+  [1m[36mJob Update (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "updated_at" = '2026-02-19 09:06:07.665979' WHERE "jobs"."id" = 16 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJob Load (0.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" WHERE "jobs"."status" = 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 5 AND "job_applications"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 5 AND "job_applications"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I have 6 years of Rails experience and have built multiple production applications. I''m excited about the opportunity to mentor junior developers.', '2026-02-19 09:06:07.672200', 1, 2, '2026-02-19 09:06:07.672186', '2026-02-19 09:06:07.672200', 5) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 11.9ms | GC: 3.3ms)
+[ActionCable] Broadcasting to employer_2_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_1\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Alice Williams</div>\...
+  [1m[36mJobApplication Load (0.1ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 5 AND "job_applications"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 5 AND "job_applications"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.1ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I''d love to help build your payment processing features.', '2026-02-19 09:06:07.710958', 2, 0, NULL, '2026-02-19 09:06:07.710958', 5) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 2 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_2_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_2\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Alice Williams</div>\...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 6 AND "job_applications"."job_id" = 7 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 6 AND "job_applications"."job_id" = 7 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('My portfolio showcases 3 years of product design work for SaaS products.', '2026-02-19 09:06:07.714506', 7, 1, '2026-02-19 09:06:07.714494', '2026-02-19 09:06:07.714506', 6) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 7 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 1.0ms | GC: 0.8ms)
+[ActionCable] Broadcasting to employer_3_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_3\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Charlie Brown</div>\n...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 6 AND "job_applications"."job_id" = 8 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 6 AND "job_applications"."job_id" = 8 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I''m passionate about user research and have conducted over 50 usability studies.', '2026-02-19 09:06:07.723228', 8, 0, NULL, '2026-02-19 09:06:07.723228', 6) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 8 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.5ms | GC: 0.3ms)
+[ActionCable] Broadcasting to employer_3_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_4\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Charlie Brown</div>\n...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 7 AND "job_applications"."job_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 7 AND "job_applications"."job_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I''ve driven 3x growth at my current company through SEO and content marketing.', '2026-02-19 09:06:07.735474', 4, 3, '2026-02-19 09:06:07.735455', '2026-02-19 09:06:07.735474', 7) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 4 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_2_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_5\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Diana Chen</div>\n   ...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 7 AND "job_applications"."job_id" = 6 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 7 AND "job_applications"."job_id" = 6 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('Enterprise sales is my forte. I''ve closed deals worth $2M+ annually.', '2026-02-19 09:06:07.740327', 6, 0, NULL, '2026-02-19 09:06:07.740327', 7) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 6 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_3_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_6\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Diana Chen</div>\n   ...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 8 AND "job_applications"."job_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 8 AND "job_applications"."job_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I bring strong skills in Kubernetes, Terraform, and AWS. Ready to tackle infrastructure challenges.', '2026-02-19 09:06:07.743997', 3, 2, '2026-02-19 09:06:07.743986', '2026-02-19 09:06:07.743997', 8) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 3 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_2_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_7\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Evan Martinez</div>\n...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 8 AND "job_applications"."job_id" = 10 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 8 AND "job_applications"."job_id" = 10 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('Data analysis is my passion. I''m proficient in SQL, Python, and Tableau.', '2026-02-19 09:06:07.747144', 10, 0, NULL, '2026-02-19 09:06:07.747144', 8) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 10 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.4ms | GC: 0.2ms)
+[ActionCable] Broadcasting to employer_3_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_8\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Evan Martinez</div>\n...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 9 AND "job_applications"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 9 AND "job_applications"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('As a PM with 4 years of experience, I understand the developer mindset and can bridge engineering and business.', '2026-02-19 09:06:07.750569', 1, 1, '2026-02-19 09:06:07.750558', '2026-02-19 09:06:07.750569', 9) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_2_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_9\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Fiona O&#39;Brien</di...
+  [1m[36mJobApplication Load (0.0ms)[0m  [1m[34mSELECT "job_applications".* FROM "job_applications" WHERE "job_applications"."user_id" = 9 AND "job_applications"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "job_applications" WHERE "job_applications"."user_id" = 9 AND "job_applications"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mJobApplication Create (0.0ms)[0m  [1m[32mINSERT INTO "job_applications" ("cover_letter", "created_at", "job_id", "status", "status_changed_at", "updated_at", "user_id") VALUES ('I''d love to coordinate projects at your design studio.', '2026-02-19 09:06:07.753768', 12, 4, '2026-02-19 09:06:07.753758', '2026-02-19 09:06:07.753768', 9) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mJob Update All (0.0ms)[0m  [1m[33mUPDATE "jobs" SET "applications_count" = COALESCE("jobs"."applications_count", 0) + 1 WHERE "jobs"."id" = 12 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  Rendered employer/applications/_application_row.html.erb (Duration: 0.2ms | GC: 0.0ms)
+[ActionCable] Broadcasting to employer_4_applications: "<turbo-stream action=\"prepend\" target=\"applications_list\"><template><!-- BEGIN app/views/employer/applications/_application_row.html.erb\n--><tr id=\"job_application_10\">\n  <td class=\"px-6 py-4 whitespace-nowrap\">\n    <div class=\"text-sm font-medium text-gray-900\">Fiona O&#39;Brien</d...
+  [1m[36mJobApplication Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "job_applications" /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 5 AND "saved_jobs"."job_id" = 13 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 5 AND "saved_jobs"."job_id" = 13 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.759076', 13, '2026-02-19 09:06:07.759076', 5) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 5 AND "saved_jobs"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 5 AND "saved_jobs"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.761401', 12, '2026-02-19 09:06:07.761401', 5) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 15 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 15 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.763691', 15, '2026-02-19 09:06:07.763691', 6) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 3 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.766093', 3, '2026-02-19 09:06:07.766093', 6) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 6 AND "saved_jobs"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.768431', 2, '2026-02-19 09:06:07.768431', 6) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 9 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 9 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.770772', 9, '2026-02-19 09:06:07.770772', 7) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 1 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.773115', 1, '2026-02-19 09:06:07.773115', 7) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 7 AND "saved_jobs"."job_id" = 4 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.775411', 4, '2026-02-19 09:06:07.775411', 7) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 8 AND "saved_jobs"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 8 AND "saved_jobs"."job_id" = 12 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.777718', 12, '2026-02-19 09:06:07.777718', 8) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 8 AND "saved_jobs"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 8 AND "saved_jobs"."job_id" = 2 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.780033', 2, '2026-02-19 09:06:07.780033', 8) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Load (0.0ms)[0m  [1m[34mSELECT "saved_jobs".* FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 9 AND "saved_jobs"."job_id" = 6 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "saved_jobs" WHERE "saved_jobs"."user_id" = 9 AND "saved_jobs"."job_id" = 6 LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Create (0.0ms)[0m  [1m[32mINSERT INTO "saved_jobs" ("created_at", "job_id", "updated_at", "user_id") VALUES ('2026-02-19 09:06:07.782323', 6, '2026-02-19 09:06:07.782323', 9) RETURNING "id" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mSavedJob Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "saved_jobs" /*application='Jobboard'*/[0m
