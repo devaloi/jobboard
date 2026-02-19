@@ -1,0 +1,80 @@
+<div class="max-w-7xl mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Employer Dashboard</h1>
+
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Total Listings</p>
+      <p class="text-3xl font-bold text-gray-900 mt-1"><%= @total_listings %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Active Listings</p>
+      <p class="text-3xl font-bold text-green-600 mt-1"><%= @active_listings %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">Total Applicants</p>
+      <p class="text-3xl font-bold text-indigo-600 mt-1"><%= @total_applicants %></p>
+    </div>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <p class="text-sm font-medium text-gray-500">New This Week</p>
+      <p class="text-3xl font-bold text-orange-600 mt-1"><%= @new_applicants %></p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Recent Applications -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900">Recent Applications</h2>
+      </div>
+      <% if @recent_applications.any? %>
+        <div class="divide-y divide-gray-200">
+          <% @recent_applications.each do |app| %>
+            <div class="px-6 py-4 flex justify-between items-center">
+              <div>
+                <p class="text-sm font-medium text-gray-900"><%= app.user.full_name %></p>
+                <p class="text-xs text-gray-500">Applied to <%= app.job.title %></p>
+              </div>
+              <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(app.status) %>">
+                <%= app.status.humanize %>
+              </span>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="px-6 py-8 text-center text-gray-500 text-sm">No applications yet.</div>
+      <% end %>
+    </div>
+
+    <!-- My Listings -->
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">My Listings</h2>
+        <%= link_to "View All", employer_jobs_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+      </div>
+      <% if @jobs.any? %>
+        <div class="divide-y divide-gray-200">
+          <% @jobs.each do |job| %>
+            <div class="px-6 py-4 flex justify-between items-center">
+              <div>
+                <p class="text-sm font-medium text-gray-900"><%= job.title %></p>
+                <p class="text-xs text-gray-500"><%= job.category.name %> · <%= job.applications_count %> applicant(s)</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= status_badge_class(job.status) %>">
+                  <%= job.status.humanize %>
+                </span>
+                <%= link_to "Manage", edit_employer_job_path(job), class: "text-xs text-indigo-600 hover:text-indigo-800" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="px-6 py-8 text-center">
+          <p class="text-gray-500 text-sm mb-2">No listings yet.</p>
+          <%= link_to "Post Your First Job", new_employer_job_path, class: "text-sm text-indigo-600 hover:text-indigo-800" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
