@@ -1,0 +1,80 @@
+<nav class="bg-white shadow-sm border-b border-gray-200" data-controller="toggle">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <%= link_to root_path, class: "flex items-center space-x-2" do %>
+          <span class="text-2xl font-bold text-indigo-600">JobBoard</span>
+        <% end %>
+
+        <div class="hidden sm:ml-8 sm:flex sm:space-x-4">
+          <%= link_to "Browse Jobs", jobs_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+
+          <% if user_signed_in? && current_user.employer? %>
+            <%= link_to "My Listings", employer_jobs_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+            <%= link_to "Dashboard", employer_dashboard_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+          <% end %>
+
+          <% if user_signed_in? && current_user.seeker? %>
+            <%= link_to "My Applications", seeker_applications_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+            <%= link_to "Dashboard", seeker_dashboard_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+          <% end %>
+
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to "Admin", admin_dashboard_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex sm:items-center sm:space-x-4">
+        <% if user_signed_in? %>
+          <span class="text-sm text-gray-500"><%= current_user.full_name %></span>
+          <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium <%= role_badge_class(current_user.role) %>">
+            <%= current_user.role.humanize %>
+          </span>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "text-gray-700 hover:text-red-600 px-3 py-2 text-sm font-medium transition" %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition" %>
+        <% end %>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center sm:hidden">
+        <button data-action="toggle#toggle" data-toggle-target="menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="sm:hidden hidden" data-toggle-target="content">
+    <div class="pt-2 pb-3 space-y-1 px-4">
+      <%= link_to "Browse Jobs", jobs_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+
+      <% if user_signed_in? %>
+        <% if current_user.employer? %>
+          <%= link_to "My Listings", employer_jobs_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+          <%= link_to "Dashboard", employer_dashboard_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+        <% elsif current_user.seeker? %>
+          <%= link_to "My Applications", seeker_applications_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+          <%= link_to "Dashboard", seeker_dashboard_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+        <% elsif current_user.admin? %>
+          <%= link_to "Admin", admin_dashboard_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+        <% end %>
+
+        <div class="border-t border-gray-200 pt-2 mt-2">
+          <p class="text-sm text-gray-500 py-1"><%= current_user.full_name %> (<%= current_user.role %>)</p>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "block text-red-600 py-2 text-base font-medium" %>
+        </div>
+      <% else %>
+        <div class="border-t border-gray-200 pt-2 mt-2">
+          <%= link_to "Log in", new_user_session_path, class: "block text-gray-700 hover:text-indigo-600 py-2 text-base font-medium" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "block text-indigo-600 font-semibold py-2 text-base" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</nav>
