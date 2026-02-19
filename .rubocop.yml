@@ -9,6 +9,8 @@ AllCops:
     - "db/queue_schema.rb"
     - "db/cable_schema.rb"
     - "bin/**/*"
+    - "gems/**/*"
+    - "specifications/**/*"
     - "node_modules/**/*"
     - "vendor/**/*"
     - "config/initializers/devise.rb"

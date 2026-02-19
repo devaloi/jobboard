@@ -26,6 +26,14 @@
 /config/master.key
 /config/credentials/*.key
 
+# Ignore local Bundler artifacts
+/gems/
+/specifications/
+/cache/
+/extensions/
+/plugins/
+/.bundle
+
 # Ignore node_modules
 /node_modules
 

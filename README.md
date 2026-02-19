@@ -1,5 +1,7 @@
 # JobBoard
 
+[![CI](https://github.com/devaloi/jobboard/actions/workflows/ci.yml/badge.svg)](https://github.com/devaloi/jobboard/actions/workflows/ci.yml)
+
 A full-featured job board application with employer/seeker roles, full-text search, Hotwire real-time updates, application tracking, and email notifications — built with Rails 8.1 and Tailwind CSS.
 
 ## Tech Stack
