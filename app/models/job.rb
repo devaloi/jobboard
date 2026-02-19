@@ -19,6 +19,14 @@ class Job < ApplicationRecord
   scope :recent, -> { order(created_at: :desc) }
   scope :salary_above, ->(min) { where("salary_min >= ?", min) if min.present? }
 
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[title location salary_min salary_max job_type status created_at]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[user category]
+  end
+
   def expired?
     expires_at.present? && expires_at < Date.current
   end

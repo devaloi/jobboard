@@ -2,18 +2,14 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: %i[apply save_job unsave_job]
 
   def index
-    @jobs = Job.active.includes(:category, :user).recent
+    base_scope = Job.active.includes(:category, :user)
+    @q = base_scope.ransack(params[:q])
+    @q.sorts = "created_at desc" if @q.sorts.empty?
+    @jobs = @q.result(distinct: true)
+
     @jobs = @jobs.by_type(params[:job_type]) if params[:job_type].present?
     @jobs = @jobs.by_category(params[:category]) if params[:category].present?
     @jobs = @jobs.salary_above(params[:salary_min]) if params[:salary_min].present?
-
-    if params[:q].present?
-      query = "%#{params[:q]}%"
-      @jobs = @jobs.left_joins(:user).where(
-        "jobs.title LIKE :q OR jobs.location LIKE :q OR users.company_name LIKE :q",
-        q: query
-      )
-    end
 
     @jobs = apply_sort(@jobs)
     @pagy, @jobs = pagy(@jobs, limit: 12)
