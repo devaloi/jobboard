@@ -65,3 +65,35 @@ Migrating to CreateActionTextTables (20260219084401)
   [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260219084401') RETURNING "version" /*application='Jobboard'*/[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
+Migrating to CreateJobApplications (20260219084901)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "job_applications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "job_id" integer NOT NULL, "user_id" integer NOT NULL, "cover_letter" text, "status" integer DEFAULT 0 NOT NULL, "status_changed_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_82b18fab66"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+, CONSTRAINT "fk_rails_0e9ee51b69"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_job_id" ON "job_applications" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_user_id" ON "job_applications" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_job_applications_on_user_id_and_job_id" ON "job_applications" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_job_applications_on_status" ON "job_applications" ("status") /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260219084901') RETURNING "version" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+Migrating to CreateSavedJobs (20260219084937)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Jobboard'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "saved_jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "job_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_dae508240e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1c8f8a4576"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+) /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_user_id" ON "saved_jobs" ("user_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_saved_jobs_on_job_id" ON "saved_jobs" ("job_id") /*application='Jobboard'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_saved_jobs_on_user_id_and_job_id" ON "saved_jobs" ("user_id", "job_id") /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260219084937') RETURNING "version" /*application='Jobboard'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Jobboard'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Jobboard'*/[0m
