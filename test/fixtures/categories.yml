@@ -1,0 +1,24 @@
+engineering:
+  name: Engineering
+  slug: engineering
+  jobs_count: 0
+
+design:
+  name: Design
+  slug: design
+  jobs_count: 0
+
+marketing:
+  name: Marketing
+  slug: marketing
+  jobs_count: 0
+
+sales:
+  name: Sales
+  slug: sales
+  jobs_count: 0
+
+product:
+  name: Product
+  slug: product
+  jobs_count: 0
