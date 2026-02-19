@@ -46,7 +46,7 @@ gem "image_processing", "~> 1.2"
 gem "devise"
 
 # Pagination
-gem "pagy"
+gem "pagy", "~> 9.0"
 
 # Search
 gem "ransack"
