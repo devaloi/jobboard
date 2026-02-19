@@ -1,0 +1,21 @@
+Hi <%= @user.full_name %>,
+
+Your application for "<%= @job.title %>" at <%= @job.company_name %> has been updated.
+
+Current Status: <%= @application.status.humanize %>
+
+<% case @application.status %>
+<% when "reviewed" %>
+The employer has reviewed your application. Stay tuned for next steps!
+<% when "interview" %>
+Congratulations! You've been selected for an interview.
+<% when "offer" %>
+Great news! You've received an offer.
+<% when "rejected" %>
+Unfortunately, the employer has decided not to move forward. Keep applying!
+<% end %>
+
+View your applications: <%= seeker_applications_url %>
+
+—
+JobBoard

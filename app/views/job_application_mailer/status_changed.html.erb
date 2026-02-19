@@ -1,0 +1,42 @@
+<div style="max-width: 600px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <div style="background-color: #4f46e5; padding: 24px; text-align: center;">
+    <h1 style="color: white; margin: 0; font-size: 24px;">JobBoard</h1>
+  </div>
+
+  <div style="padding: 32px; background-color: #ffffff; border: 1px solid #e5e7eb;">
+    <p style="color: #374151; font-size: 16px;">Hi <%= @user.full_name %>,</p>
+
+    <p style="color: #374151; font-size: 16px;">
+      Your application for <strong><%= @job.title %></strong> at <strong><%= @job.company_name %></strong>
+      has been updated.
+    </p>
+
+    <div style="background-color: #f3f4f6; border-radius: 8px; padding: 16px; margin: 24px 0; text-align: center;">
+      <p style="color: #6b7280; font-size: 14px; margin: 0 0 8px;">Current Status</p>
+      <p style="font-size: 20px; font-weight: bold; color: #4f46e5; margin: 0;"><%= @application.status.humanize %></p>
+    </div>
+
+    <p style="color: #374151; font-size: 14px;">
+      <% case @application.status %>
+      <% when "reviewed" %>
+        The employer has reviewed your application. Stay tuned for next steps!
+      <% when "interview" %>
+        Congratulations! You've been selected for an interview.
+      <% when "offer" %>
+        Great news! You've received an offer.
+      <% when "rejected" %>
+        Unfortunately, the employer has decided not to move forward. Keep applying!
+      <% end %>
+    </p>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="<%= seeker_applications_url %>" style="display: inline-block; padding: 12px 24px; background-color: #4f46e5; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">
+        View Your Applications
+      </a>
+    </div>
+  </div>
+
+  <div style="padding: 16px; text-align: center; color: #9ca3af; font-size: 12px;">
+    <p>&copy; <%= Date.current.year %> JobBoard</p>
+  </div>
+</div>
