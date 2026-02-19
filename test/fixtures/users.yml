@@ -1,0 +1,31 @@
+admin:
+  email: admin@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  role: 2
+  full_name: Admin User
+
+employer_one:
+  email: employer1@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  role: 1
+  full_name: Jane Smith
+  company_name: TechCorp Inc
+
+employer_two:
+  email: employer2@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  role: 1
+  full_name: Bob Johnson
+  company_name: StartupXYZ
+
+seeker_one:
+  email: seeker1@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  role: 0
+  full_name: Alice Williams
+
+seeker_two:
+  email: seeker2@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  role: 0
+  full_name: Charlie Brown
